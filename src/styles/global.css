@@ -45,6 +45,17 @@
     overflow-x: hidden;
   }
 
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  svg:not([class*="w-"]) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   ::selection {
     background-color: #00d4aa;
     color: #050505;

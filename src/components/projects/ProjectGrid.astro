@@ -10,20 +10,20 @@ const { projects, title } = Astro.props;
 ---
 
 <section class="section" aria-labelledby="projects-heading">
-  <div className="container">
+  <div class="container">
     {title && (
-      <header className="text-center mb-16 animate-fade-in">
-        <h2 id="projects-heading" className="font-display text-4xl sm:text-5xl font-bold mb-4">
+      <header class="text-center mb-16 animate-fade-in">
+        <h2 id="projects-heading" class="font-display text-4xl sm:text-5xl font-bold mb-4">
           {title}
         </h2>
-        <p className="text-text-secondary max-w-2xl mx-auto">
+        <p class="text-text-secondary max-w-2xl mx-auto">
           Selected projects demonstrating end-to-end ML systems, predictive analytics, and full-stack engineering.
         </p>
       </header>
     )}
 
     <div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
       role="list"
       aria-label={title || 'Projects'}
     >
