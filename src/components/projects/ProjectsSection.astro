@@ -1,0 +1,61 @@
+---
+import ProjectCardInteractive from './ProjectCardInteractive.tsx';
+import CaseStudyModal from './CaseStudyModal.tsx';
+import { PROJECT_TYPES } from '@/data/constants';
+import type { Project } from '@/data/projects';
+
+interface Props {
+  projects?: Project[];
+  items?: Project[];
+}
+
+const { projects, items } = Astro.props;
+const projectList = projects || items || [];
+---
+
+<div>
+  <script is:inline>
+    window.currentProject = null;
+    window.openCaseStudy = function(proj) {
+      window.currentProject = proj;
+      const event = new CustomEvent('open-case-study', { detail: proj });
+      window.dispatchEvent(event);
+    };
+  </script>
+
+  <section id="projects" class="section relative" aria-labelledby="projects-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent-primary/2 to-transparent" aria-hidden="true" />
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27 opacity=%270.015%27/%3E%3C/svg%27')]" aria-hidden="true" />
+
+    <div class="container relative">
+      <header class="section-header animate-fade-in">
+        <p class="section-label">Selected Work</p>
+        <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          End-to-end ML systems, predictive analytics, and full-stack applications demonstrating production-grade engineering practices.
+        </p>
+      </header>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        role="list"
+        aria-label="Featured projects"
+      >
+        {projectList.map((project, index) => (
+          <ProjectCardInteractive project={project} index={index} client:visible />
+        ))}
+      </div>
+
+      <div class="mt-12 lg:mt-16 text-center animate-fade-in stagger-1">
+        <a href="/portfolio/projects" class="btn-outline inline-flex items-center gap-2">
+          View All Projects
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CaseStudyModal client:visible />
+</div>

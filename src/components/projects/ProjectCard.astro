@@ -1,0 +1,17 @@
+---
+import ProjectCardInteractive from './ProjectCardInteractive.tsx';
+import type { Project } from '@/data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+const { project, index } = Astro.props;
+---
+
+<ProjectCardInteractive
+  project={project}
+  index={index}
+  onOpenCaseStudy={(proj: any) => window.openCaseStudy?.(proj)}
+  client:visible
+/>

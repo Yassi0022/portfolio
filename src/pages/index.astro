@@ -1,0 +1,27 @@
+---
+import Layout from '@/components/layout/Layout.astro';
+import Hero from '@/components/hero/Hero.astro';
+import ProjectsSection from '@/components/projects/ProjectsSection.astro';
+import ExperienceSection from '@/components/experience/ExperienceSection.astro';
+import ContactSection from '@/components/contact/ContactSection.astro';
+import { getFeaturedProjects } from '@/data/projects';
+---
+
+<Layout title="Yassi — Data Scientist & Backend Developer" description="Building production ML systems, scalable backends, and data-driven products." image="/images/og-image.svg">
+  <script>
+    window.currentProject = null;
+    window.openCaseStudy = function(proj) {
+      window.currentProject = proj;
+      const event = new CustomEvent('open-case-study', { detail: proj });
+      window.dispatchEvent(event);
+    };
+  </script>
+
+  <Hero />
+
+  <ProjectsSection projects={getFeaturedProjects()} />
+
+  <ExperienceSection />
+
+  <ContactSection />
+</Layout>

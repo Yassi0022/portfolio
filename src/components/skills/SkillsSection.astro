@@ -1,0 +1,65 @@
+---
+import SkillsVisualization from './SkillsVisualization.tsx';
+import { SKILL_CATEGORIES } from '@/data/skills';
+import CategoryIcon from '@/components/ui/CategoryIcon.astro';
+
+function getCategoryDescription(category: string): string {
+  const descriptions: Record<string, string> = {
+    backend: 'Scalable APIs, microservices, distributed systems, and high-performance backend architecture.',
+    data: 'ETL pipelines, data warehousing, real-time streaming, and large-scale data processing.',
+    ml: 'Production ML systems, MLOps pipelines, model serving, feature stores, and ML infrastructure.',
+    devops: 'Container orchestration, CI/CD, infrastructure as code, monitoring, and cloud architecture.',
+  };
+  return descriptions[category] || '';
+}
+
+function getCategoryTechs(category: string): string[] {
+  const techs: Record<string, string[]> = {
+    backend: ['Python', 'Go', 'Java', 'Spring Boot', 'FastAPI', 'PostgreSQL', 'Redis', 'gRPC', 'Kafka', 'RabbitMQ', 'GraphQL', 'REST'],
+    data: ['Spark', 'Flink', 'Airflow', 'dbt', 'Snowflake', 'BigQuery', 'Kafka', 'ClickHouse', 'Delta Lake', 'Iceberg', 'Presto', 'Hive'],
+    ml: ['PyTorch', 'TensorFlow', 'XGBoost', 'LightGBM', 'MLflow', 'Feast', 'Kubeflow', 'Seldon', 'ONNX', 'Optuna', 'SHAP', 'Evidently AI'],
+    devops: ['Kubernetes', 'Docker', 'Terraform', 'Helm', 'ArgoCD', 'Prometheus', 'Grafana', 'ELK', 'GitLab CI', 'GitHub Actions', 'Vault', 'Istio'],
+  };
+  return techs[category] || [];
+}
+---
+
+<section id="skills" class="section bg-bg-secondary relative overflow-hidden" aria-labelledby="skills-heading">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent-primary/3 to-transparent" aria-hidden="true" />
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27 opacity=%270.015%27/%3E%3C/svg%27')]" aria-hidden="true" />
+
+  <div class="container relative">
+    <header class="section-header animate-fade-in">
+      <p class="section-label">Core Competencies</p>
+      <h2 id="skills-heading" class="section-title">Technical Skills</h2>
+      <p class="section-subtitle">
+        Interactive force-directed graph — click nodes to filter by category, hover for proficiency details. Node size reflects expertise level.
+      </p>
+    </header>
+
+    <div class="max-w-6xl mx-auto mb-12 lg:mb-16">
+      <SkillsVisualization client:visible />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in stagger-1">
+      {SKILL_CATEGORIES.map(cat => (
+        <div key={cat.id} class="card-elevated group relative overflow-hidden p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-accent-primary/15 flex items-center justify-center group-hover:bg-accent-primary/25 group-hover:scale-105 transition-all duration-300">
+              <CategoryIcon name={cat.icon} class="w-5 h-5 text-accent-primary" />
+            </div>
+            <h3 class="font-display text-lg font-bold text-text-primary">{cat.label}</h3>
+          </div>
+          <p class="text-text-secondary text-sm mb-4 leading-relaxed">{getCategoryDescription(cat.id)}</p>
+          <div class="flex flex-wrap gap-2" role="list" aria-label={cat.label + " technologies"}>
+            {getCategoryTechs(cat.id).slice(0, 8).map((tech, i) => (
+              <span key={tech} class="badge bg-bg-tertiary text-text-secondary border-border text-xs group-hover:text-accent-primary group-hover:border-accent-primary/30 transition-colors" role="listitem">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

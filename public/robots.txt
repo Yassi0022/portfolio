@@ -1,0 +1,9 @@
+# Robots.txt for Yassi Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yassi0022.github.io/portfolio/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 10

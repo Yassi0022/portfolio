@@ -1,0 +1,131 @@
+---
+interface Props {
+  code: string;
+  lang?: string;
+  title?: string;
+  showLineNumbers?: boolean;
+}
+const { code, lang = 'typescript', title, showLineNumbers = true } = Astro.props;
+---
+
+<div class="code-block relative group">
+  {title && (
+    <div class="flex items-center justify-between px-4 py-2 border-b border-border bg-bg-tertiary">
+      <span class="font-mono text-xs text-text-muted">{title}</span>
+      <span class="font-mono text-xs text-text-muted">{lang}</span>
+    </div>
+  )}
+
+  <pre class="p-4 overflow-x-auto">
+    <code class={`
+      language-${lang}
+      ${showLineNumbers ? 'line-numbers' : ''}
+    `} data-lang={lang}>
+{code}
+    </code>
+  </pre>
+
+  <button
+    class="absolute top-2 right-2 p-1.5 text-text-muted hover:text-text-primary opacity-0 group-hover:opacity-100 transition-opacity rounded bg-bg-tertiary/80 backdrop-blur-sm"
+    onclick="navigator.clipboard.writeText(this.previousElementSibling.querySelector('code').innerText)"
+    aria-label="Copy code"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v2m-2 2h2a2 2 0 002-2v-2" />
+    </svg>
+  </button>
+</div>
+
+<style>
+  .code-block code {
+    @apply font-mono text-sm leading-relaxed;
+  }
+
+  .code-block .line-numbers {
+    counter-reset: line;
+  }
+
+  .code-block .line-numbers > .line::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2rem;
+    margin-right: 1.5rem;
+    text-align: right;
+    color: #6a6a6a;
+    user-select: none;
+    border-right: 1px solid #2a2a2a;
+    padding-right: 0.5rem;
+  }
+
+  .code-block .token.comment,
+  .code-block .token.prolog,
+  .code-block .token.doctype,
+  .code-block .token.cdata {
+    color: #6a9955;
+  }
+
+  .code-block .token.punctuation {
+    color: #d4d4d4;
+  }
+
+  .code-block .token.property,
+  .code-block .token.tag,
+  .code-block .token.constant,
+  .code-block .token.symbol,
+  .code-block .token.deleted {
+    color: #f44747;
+  }
+
+  .code-block .token.boolean,
+  .code-block .token.number {
+    color: #b5cea8;
+  }
+
+  .code-block .token.selector,
+  .code-block .token.attr-name,
+  .code-block .token.string,
+  .code-block .token.char,
+  .code-block .token.builtin,
+  .code-block .token.inserted {
+    color: #ce9178;
+  }
+
+  .code-block .token.operator,
+  .code-block .token.entity,
+  .code-block .token.url,
+  .language-css .code-block .token.string,
+  .style .code-block .token.string {
+    color: #d4d4d4;
+  }
+
+  .code-block .token.atrule,
+  .code-block .token.attr-value,
+  .code-block .token.keyword {
+    color: #c586c0;
+  }
+
+  .code-block .token.function,
+  .code-block .token.class-name {
+    color: #dcdcaa;
+  }
+
+  .code-block .token.regex,
+  .code-block .token.important,
+  .code-block .token.variable {
+    color: #d16969;
+  }
+
+  .code-block .token.important,
+  .code-block .token.bold {
+    font-weight: bold;
+  }
+
+  .code-block .token.italic {
+    font-style: italic;
+  }
+
+  .code-block .token.entity {
+    cursor: help;
+  }
+</style>

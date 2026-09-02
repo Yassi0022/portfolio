@@ -1,0 +1,44 @@
+---
+import Navbar from '@/components/navigation/Navbar.astro';
+import Footer from '@/components/layout/Footer.astro';
+import SEOMeta from '@/components/layout/SEOMeta.astro';
+import { SITE_CONFIG } from '@/data/constants';
+import '@/styles/global.css';
+import '@/scripts/view-transitions.ts';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+const { title, description = SITE_CONFIG.description, image, url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="generator" content={Astro.generator} />
+    <SEOMeta title={title} description={description} image={image} url={url} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" />
+    </noscript>
+  </head>
+  <body class="font-ui antialiased">
+    <Navbar />
+    <main id="main-content" class="pt-16 lg:pt-18">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      document.documentElement.classList.add('dark');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="accent-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#569cd6"/>
+      <stop offset="50%" style="stop-color:#4ec9b0"/>
+      <stop offset="100%" style="stop-color:#c586c0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent-line)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="url(#accent-line)"/>
+  <text x="600" y="260" font-family="Space Grotesk, sans-serif" font-size="64" font-weight="700" fill="#f5f5f5" text-anchor="middle">Yassi</text>
+  <text x="600" y="330" font-family="IBM Plex Sans, sans-serif" font-size="28" font-weight="400" fill="#a0a0a0" text-anchor="middle">Data Scientist & Backend Developer</text>
+  <text x="600" y="380" font-family="JetBrains Mono, monospace" font-size="18" font-weight="400" fill="#569cd6" text-anchor="middle">MLOps · Predictive Analytics · Full Stack</text>
+  <g transform="translate(600, 460)">
+    <circle cx="-80" cy="0" r="8" fill="#569cd6" opacity="0.8"/>
+    <circle cx="0" cy="0" r="8" fill="#4ec9b0" opacity="0.8"/>
+    <circle cx="80" cy="0" r="8" fill="#c586c0" opacity="0.8"/>
+  </g>
+</svg>
