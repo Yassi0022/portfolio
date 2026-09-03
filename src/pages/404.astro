@@ -2,22 +2,17 @@
 import Layout from '@/components/layout/Layout.astro';
 ---
 
-<Layout title="404 — Page Not Found | Yassi" description="Page not found" image="/images/og-image.svg">
-  <div class="min-h-[60vh] flex items-center justify-center px-6">
+<Layout title="404 — Page Not Found" description="Page not found" image="/portfolio/images/og-image.svg">
+  <div class="min-h-[60vh] flex items-center justify-center px-6 pt-20">
     <div class="text-center max-w-md">
-      <div class="font-mono text-8xl sm:text-9xl font-bold text-accent-code/20 mb-4 animate-pulse">404</div>
-      <h1 class="font-display text-3xl sm:text-4xl font-bold mb-4">Page Not Found</h1>
-      <p class="text-text-secondary mb-8">
-        The page you're looking for doesn't exist or has been moved.
-        Let's get you back on track.
+      <div class="font-mono text-8xl sm:text-9xl font-bold text-ink/10 mb-4">404</div>
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-ink mb-4">Page Not Found</h1>
+      <p class="text-ink-secondary mb-8 leading-relaxed">
+        The page you're looking for doesn't exist or has been moved. Let's get you back on track.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/portfolio/" class="btn-primary">
-          ← Back to Home
-        </a>
-        <a href="/portfolio/projects" class="btn-secondary">
-          View Projects
-        </a>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/portfolio/" class="btn-primary">Back to Home</a>
+        <a href="/portfolio/#projects" class="btn-secondary">View Projects</a>
       </div>
     </div>
   </div>

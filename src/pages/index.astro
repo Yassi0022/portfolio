@@ -2,26 +2,41 @@
 import Layout from '@/components/layout/Layout.astro';
 import Hero from '@/components/hero/Hero.astro';
 import ProjectsSection from '@/components/projects/ProjectsSection.astro';
-import ExperienceSection from '@/components/experience/ExperienceSection.astro';
+import SkillsSection from '@/components/skills/SkillsSection.astro';
 import ContactSection from '@/components/contact/ContactSection.astro';
-import { getFeaturedProjects } from '@/data/projects';
 ---
 
-<Layout title="Yassi — Data Scientist & Backend Developer" description="Building production ML systems, scalable backends, and data-driven products." image="/images/og-image.svg">
-  <script>
-    window.currentProject = null;
-    window.openCaseStudy = function(proj) {
-      window.currentProject = proj;
-      const event = new CustomEvent('open-case-study', { detail: proj });
-      window.dispatchEvent(event);
-    };
-  </script>
-
+<Layout title="Yassine Hatouf — Data Scientist & Data Analyst" description="Using data to understand people and performance. HR analytics, predictive modeling, and clear communication." image="/portfolio/images/og-image.svg">
   <Hero />
+  <ProjectsSection />
+  <SkillsSection />
 
-  <ProjectsSection projects={getFeaturedProjects()} />
+  <section id="how-i-work" class="section-padding bg-dark-section text-dark-section-text" aria-labelledby="approach-heading">
+    <div class="max-w-content mx-auto px-6 lg:px-10">
+      <header class="mb-12 lg:mb-16 max-w-2xl">
+        <p class="label-eyebrow mb-3 text-accent-sage">Approach</p>
+        <h2 id="approach-heading" class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">How I work</h2>
+        <p class="text-lg text-white/80 leading-relaxed">
+          Analysis is a conversation, not a presentation. I clarify the question, check the data, build the model, explain the result — and always include what could be wrong.
+        </p>
+      </header>
 
-  <ExperienceSection />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
+          <h3 class="font-display text-lg font-bold text-white mb-3">Clarify the question</h3>
+          <p class="text-sm text-white/70 leading-relaxed">I start with the business or research problem, not the dataset. What decision will this inform? Who needs to understand it?</p>
+        </article>
+        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
+          <h3 class="font-display text-lg font-bold text-white mb-3">Build with evidence</h3>
+          <p class="text-sm text-white/70 leading-relaxed">Every model includes validation, every chart includes context, and every recommendation notes its limitations.</p>
+        </article>
+        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
+          <h3 class="font-display text-lg font-bold text-white mb-3">Communicate clearly</h3>
+          <p class="text-sm text-white/70 leading-relaxed">Results are written for the reader — not the model. Metrics are labeled, caveats are explicit, and visuals tell one story.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <ContactSection />
 </Layout>

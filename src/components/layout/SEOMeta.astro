@@ -8,32 +8,24 @@ interface Props {
 }
 const { title, description, image, url, type = 'website' } = Astro.props;
 
-const siteTitle = 'Yassi — Data Scientist & Backend Developer';
+const siteTitle = 'Yassine Hatouf — Data Scientist & Data Analyst';
 const siteUrl = 'https://yassi0022.github.io/portfolio';
-const defaultImage = '/images/og-image.png';
+const defaultImage = '/portfolio/images/og-image.svg';
 const twitterHandle = '@yassi_dev';
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Yassine Hatouf',
   alternateName: 'Yassi',
-  jobTitle: 'Data Scientist & Backend Developer',
+  jobTitle: 'Data Scientist & Data Analyst',
   url: siteUrl,
   sameAs: [
     'https://github.com/Yassi0022',
     'https://www.linkedin.com/in/yassine-hatouf',
   ],
   knowsAbout: [
-    'Data Science',
-    'Machine Learning',
-    'MLOps',
-    'Backend Engineering',
-    'Python',
-    'FastAPI',
-    'XGBoost',
-    'Java',
-    'Spring Boot',
-    'Kubernetes'
+    'Data Science', 'HR Analytics', 'Predictive Modeling',
+    'Python', 'SQL', 'Statistics', 'XGBoost', 'SHAP', 'Visualization',
   ]
 };
 ---
@@ -41,13 +33,11 @@ const personSchema = {
 <title>{title} | {siteTitle}</title>
 <meta name="description" content={description} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={image || defaultImage} />
+<meta property="og:image" content={image ? `/portfolio${image}` : defaultImage} />
 <meta property="og:url" content={url || siteUrl} />
 <meta property="og:site_name" content={siteTitle} />
 
@@ -55,7 +45,7 @@ const personSchema = {
 <meta name="twitter:site" content={twitterHandle} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={image || defaultImage} />
+<meta name="twitter:image" content={image ? `/portfolio${image}` : defaultImage} />
 
 <link rel="canonical" href={url || siteUrl} />
 <link rel="sitemap" href="/portfolio/sitemap.xml" />

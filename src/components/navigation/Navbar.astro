@@ -1,44 +1,46 @@
 ---
-import ThemeToggle from './ThemeToggle.tsx';
 import { NAV_ITEMS, SITE_CONFIG } from '@/data/constants';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-[30] bg-bg-primary/60 backdrop-blur-2xl border-b border-border/30" aria-label="Main navigation">
-  <div class="container flex items-center justify-between h-16 lg:h-18">
-    <a href="/portfolio/" class="flex items-center gap-2.5 font-display text-xl font-bold text-text-primary hover:text-accent-primary transition-colors duration-fast" aria-label="Go to homepage — Yassine Hatouf">
-      <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 16l4-16M6 9a4 4 0 00-4 4v8a2 2 0 002 2h12a2 2 0 002-2v-8a4 4 0 00-4-4H6z" />
-      </svg>
-      <span class="hidden sm:block">{SITE_CONFIG.name}</span>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-page/90 backdrop-blur-sm border-b border-border/60" aria-label="Main navigation">
+  <div class="max-w-content mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[4.5rem]">
+    <a href="/portfolio/" class="flex items-center gap-2.5 font-display text-xl font-bold text-ink hover:text-accent-green transition-colors" aria-label="Go to homepage — Yassine Hatouf">
+      <span class="hidden sm:inline">{SITE_CONFIG.name}</span>
     </a>
 
     <div class="hidden lg:flex items-center gap-1">
       {NAV_ITEMS.map(item => (
         <a
           href={item.href}
-          class="relative px-4 py-2.5 text-text-secondary hover:text-text-primary transition-colors duration-fast font-medium text-sm rounded-lg hover:bg-bg-tertiary"
+          class="relative px-4 py-2 text-sm font-medium text-ink-secondary hover:text-ink rounded-lg hover:bg-surface-subtle transition-colors"
         >
           {item.label}
-          <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent-primary transition-all duration-300 ease-out-expo hover:w-full" aria-hidden="true" />
         </a>
       ))}
     </div>
 
-    <div class="flex items-center gap-3">
-      <ThemeToggle client:visible />
-      <button class="lg:hidden p-2 text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-bg-tertiary" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+    <div class="flex items-center gap-2">
+      <a href="/portfolio#contact" class="hidden sm:inline-flex btn-primary text-xs px-4 py-2">Contact</a>
+      <button
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden'); document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', document.getElementById('mobile-menu').classList.contains('hidden') ? 'false' : 'true');"
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-ink hover:text-accent-green rounded-lg hover:bg-surface-subtle transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </div>
-</nav>
 
-<style>
-  @media (max-width: 1023px) {
-    nav {
-      background: rgba(5, 5, 5, 0.85) !important;
-    }
-  }
-</style>
+  <div id="mobile-menu" class="hidden lg:hidden bg-page border-b border-border/60" role="region" aria-label="Mobile navigation">
+    <div class="max-w-content mx-auto px-6 py-4 flex flex-col gap-1">
+      {NAV_ITEMS.map(item => (
+        <a href={item.href} class="block px-4 py-3 text-ink-secondary hover:text-ink hover:bg-surface-subtle rounded-lg transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', 'false');">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

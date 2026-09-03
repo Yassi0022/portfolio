@@ -19,17 +19,15 @@ interface SkillNode {
 }
 
 const CATEGORY_COLORS = {
-  backend: '#00d4aa',
-  data: '#00b8d4',
   ml: '#a855f7',
-  devops: '#fbbf24',
+  backend: '#00d4aa',
+  people: '#00b8d4',
 };
 
 const CATEGORY_POSITIONS = {
-  backend: { x: 0.18, y: 0.28 },
-  data: { x: 0.82, y: 0.28 },
-  ml: { x: 0.82, y: 0.72 },
-  devops: { x: 0.18, y: 0.72 },
+  ml: { x: 0.25, y: 0.35 },
+  backend: { x: 0.75, y: 0.35 },
+  people: { x: 0.5, y: 0.75 },
 };
 
 export function SkillsVisualization() {

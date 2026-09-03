@@ -112,12 +112,12 @@ export function GenerativeHero({ className = '' }: GenerativeHeroProps) {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="text-left lg:pr-12">
               <div className="animate-fade-in animate-delay-100">
-                <p className="font-mono text-accent-primary text-sm tracking-widest uppercase mb-6 animate-slide-up">
-                  Data Scientist & Backend Developer
+                <p className="font-mono text-accent-primary text-sm tracking-widest uppercase mb-4 animate-slide-up">
+                  Yassine Hatouf — Data Scientist & Backend Developer
                 </p>
               </div>
 
-              <h1 className="font-display text-display-xl lg:text-display-xl font-bold leading-tight mb-8 animate-slide-up stagger-1">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-slide-up stagger-1">
                 Building production
                 <br />
                 <span className="text-gradient">ML systems</span>
@@ -125,9 +125,8 @@ export function GenerativeHero({ className = '' }: GenerativeHeroProps) {
                 & scalable backends
               </h1>
 
-              <p className="text-body-lg text-text-secondary max-w-xl mb-12 animate-slide-up stagger-2">
-                Turning complex data into actionable insights through end-to-end MLOps pipelines,
-                predictive analytics, and distributed systems engineering.
+              <p className="text-body-lg text-text-secondary max-w-xl mb-8 animate-slide-up stagger-2 leading-relaxed">
+                Computer Engineering student & Organizational Psychologist specializing in Machine Learning, Data Analytics, Python, and Scalable Backend Architectures.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start justify-start gap-4 animate-slide-up stagger-3">
@@ -153,33 +152,26 @@ export function GenerativeHero({ className = '' }: GenerativeHeroProps) {
                 </a>
               </div>
 
-              <div className="mt-16 flex flex-wrap items-center gap-8 animate-slide-up stagger-4" role="list" aria-label="Key metrics">
+              <div className="mt-10 flex flex-wrap items-center gap-6 animate-slide-up stagger-4" role="list" aria-label="Focus areas">
                 <div className="group">
-                  <div className="text-3xl sm:text-4xl font-display font-bold text-accent-primary mb-1 group-hover:text-accent-secondary transition-colors">
-                    50+
+                  <div className="text-xl sm:text-2xl font-display font-bold text-accent-primary mb-0.5 group-hover:text-accent-secondary transition-colors">
+                    Machine Learning
                   </div>
-                  <div className="text-text-muted font-mono text-sm">Models in Production</div>
+                  <div className="text-text-muted font-mono text-xs">MLOps & Predictive Models</div>
                 </div>
-                <div className="w-px h-8 bg-border mx-4 hidden sm:block" />
+                <div className="w-px h-8 bg-border hidden sm:block" />
                 <div className="group">
-                  <div className="text-3xl sm:text-4xl font-display font-bold text-accent-secondary mb-1 group-hover:text-accent-tertiary transition-colors">
-                    99.9%
+                  <div className="text-xl sm:text-2xl font-display font-bold text-accent-secondary mb-0.5 group-hover:text-accent-tertiary transition-colors">
+                    Backend Engineering
                   </div>
-                  <div className="text-text-muted font-mono text-sm">Uptime Target</div>
+                  <div className="text-text-muted font-mono text-xs">Python, FastAPI & Microservices</div>
                 </div>
-                <div className="w-px h-8 bg-border mx-4 hidden sm:block" />
+                <div className="w-px h-8 bg-border hidden sm:block" />
                 <div className="group">
-                  <div className="text-3xl sm:text-4xl font-display font-bold text-accent-tertiary mb-1 group-hover:text-accent-primary transition-colors">
-                    {"<10ms"}
+                  <div className="text-xl sm:text-2xl font-display font-bold text-accent-tertiary mb-0.5 group-hover:text-accent-primary transition-colors">
+                    People Analytics
                   </div>
-                  <div className="text-text-muted font-mono text-sm">Feature Store Latency</div>
-                </div>
-                <div className="w-px h-8 bg-border mx-4 hidden sm:block" />
-                <div className="group">
-                  <div className="text-3xl sm:text-4xl font-display font-bold text-accent-warn mb-1 group-hover:text-accent-primary transition-colors">
-                    8+
-                  </div>
-                  <div className="text-text-muted font-mono text-sm">Years Experience</div>
+                  <div className="text-text-muted font-mono text-xs">Psychometrics & Data Insights</div>
                 </div>
               </div>
             </div>

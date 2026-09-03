@@ -1,61 +1,90 @@
 ---
-import ProjectCardInteractive from './ProjectCardInteractive.tsx';
-import CaseStudyModal from './CaseStudyModal.tsx';
-import { PROJECT_TYPES } from '@/data/constants';
-import type { Project } from '@/data/projects';
-
-interface Props {
-  projects?: Project[];
-  items?: Project[];
-}
-
-const { projects, items } = Astro.props;
-const projectList = projects || items || [];
+import { PROJECTS } from '@/data/projects';
 ---
 
-<div>
-  <script is:inline>
-    window.currentProject = null;
-    window.openCaseStudy = function(proj) {
-      window.currentProject = proj;
-      const event = new CustomEvent('open-case-study', { detail: proj });
-      window.dispatchEvent(event);
-    };
-  </script>
+<section id="projects" class="section-padding bg-page" aria-labelledby="projects-heading">
+  <div class="max-w-content mx-auto px-6 lg:px-10">
+    <header class="mb-14 lg:mb-20">
+      <p class="label-eyebrow mb-3">Case Studies</p>
+      <h2 id="projects-heading" class="section-heading mb-4">Selected work</h2>
+      <p class="text-ink-secondary text-lg max-w-2xl leading-relaxed">
+        Each project starts with a business question, uses verified data, and includes the approach, result, and limitations — not just technology badges.
+      </p>
+    </header>
 
-  <section id="projects" class="section relative" aria-labelledby="projects-heading">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent-primary/2 to-transparent" aria-hidden="true" />
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27 opacity=%270.015%27/%3E%3C/svg%27')]" aria-hidden="true" />
-
-    <div class="container relative">
-      <header class="section-header animate-fade-in">
-        <p class="section-label">Selected Work</p>
-        <h2 id="projects-heading" class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">
-          End-to-end ML systems, predictive analytics, and full-stack applications demonstrating production-grade engineering practices.
-        </p>
-      </header>
-
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-        role="list"
-        aria-label="Featured projects"
-      >
-        {projectList.map((project, index) => (
-          <ProjectCardInteractive project={project} index={index} client:visible />
-        ))}
+    <!-- Featured: HR Attrition -->
+    <article class="bg-surface-subtle border border-border rounded-2xl p-8 lg:p-12 mb-8">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+        <div>
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-ink mb-3">HR Analytics — Featured</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-ink mb-2">HR Attrition Analysis</h3>
+          <p class="text-ink-secondary leading-relaxed max-w-2xl">Predictive analytics using IBM HR data (1,470 records, 35 features, 16% attrition rate). Feature engineering produced 47 variables; XGBoost with Optuna tuning achieved ROC-AUC 0.91. SHAP explainability reveals compensation, tenure, and satisfaction as top drivers.</p>
+        </div>
       </div>
-
-      <div class="mt-12 lg:mt-16 text-center animate-fade-in stagger-1">
-        <a href="/portfolio/projects" class="btn-outline inline-flex items-center gap-2">
-          View All Projects
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+      <div class="flex flex-wrap gap-3 mb-6">
+        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">IBM HR Dataset</span>
+        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">1,470 records</span>
+        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">XGBoost</span>
+        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">SHAP / Optuna</span>
+        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">ROC-AUC 0.91</span>
       </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white border border-border rounded-xl p-4">
+          <span class="block font-display text-xl font-bold text-ink">0.91</span>
+          <span class="text-xs text-ink-muted">ROC-AUC (project benchmark)</span>
+        </div>
+        <div class="bg-white border border-border rounded-xl p-4">
+          <span class="block font-display text-xl font-bold text-ink">47</span>
+          <span class="text-xs text-ink-muted">Engineered features</span>
+        </div>
+        <div class="bg-white border border-border rounded-xl p-4">
+          <span class="block font-display text-xl font-bold text-ink">0.78</span>
+          <span class="text-xs text-ink-muted">Precision @ top 10%</span>
+        </div>
+        <div class="bg-white border border-border rounded-xl p-4">
+          <span class="block font-display text-xl font-bold text-accent-amber">$2.3M</span>
+          <span class="text-xs text-ink-muted">Estimated annual savings (project-level estimate, not validated client revenue)</span>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <a href="/portfolio/projects/hr-attrition-analysis" class="btn-primary text-sm">Read case study</a>
+        <a href="https://github.com/Yassi0022/HR-Attrition-Analysis" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">View on GitHub</a>
+      </div>
+    </article>
+
+    <!-- Secondary projects -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <article class="card-surface">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-2 h-2 rounded-full bg-accent-green" aria-hidden="true" />
+          <span class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">MLOps</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-ink mb-2">California Housing MLOps</h3>
+        <p class="text-sm text-ink-secondary leading-relaxed mb-4">Full MLOps pipeline with automated training, validation, and serving. Benchmark: R² 0.87, API latency 42ms, 94% test coverage.</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">R² 0.87</span>
+          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">42ms latency</span>
+        </div>
+        <a href="/portfolio/projects/california-housing-mlops" class="text-sm font-medium text-accent-green hover:underline">Read case study →</a>
+      </article>
+
+      <article class="card-surface">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
+          <span class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Full Stack</span>
+        </div>
+        <h3 class="font-display text-xl font-bold text-ink mb-2">HobbyBuddy</h3>
+        <p class="text-sm text-ink-secondary leading-relaxed mb-4">Social matching platform with personality-based recommendations. Benchmark: 87ms p95 API response, 99.9% uptime.</p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">87ms p95</span>
+          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">99.9% uptime</span>
+        </div>
+        <a href="/portfolio/projects/hobbybuddy" class="text-sm font-medium text-accent-green hover:underline">Read case study →</a>
+      </article>
     </div>
-  </section>
 
-  <CaseStudyModal client:visible />
-</div>
+    <div class="mt-8 p-6 bg-surface-subtle border border-border rounded-xl text-sm text-ink-secondary leading-relaxed">
+      <strong class="text-ink">Notes on metrics:</strong> HR Attrition results are from the IBM public dataset; the $2.3M figure is an estimated annual savings based on model predictions, not a verified client outcome. California Housing benchmarks reflect model and API performance on the public dataset. HobbyBuddy metrics reflect project-level benchmarks from a demonstration build. Placeholder demo URLs are not presented as live production systems.
+    </div>
+  </div>
+</section>

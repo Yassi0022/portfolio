@@ -1,142 +1,29 @@
 ---
 import Layout from '@/components/layout/Layout.astro';
-import ProjectCardInteractive from '@/components/projects/ProjectCardInteractive.tsx';
-import CaseStudyModal from '@/components/projects/CaseStudyModal.tsx';
-import { PROJECTS, getProjectsByType } from '@/data/projects';
-import { PROJECT_TYPES } from '@/data/constants';
+import { PROJECTS } from '@/data/projects';
 ---
 
-<Layout title="Projects | Yassine Hatouf" description="Selected projects demonstrating end-to-end ML systems, predictive analytics, and full-stack engineering." image="/images/og-image.svg">
-  <script>
-    window.currentProject = null;
-    window.openCaseStudy = function(proj) {
-      window.currentProject = proj;
-      const event = new CustomEvent('open-case-study', { detail: proj });
-      window.dispatchEvent(event);
-    };
-  </script>
-
-  <header class="section pt-32 pb-16 bg-gradient-to-b from-bg-secondary to-bg-primary relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-tertiary/5" aria-hidden="true" />
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27 opacity=%270.02%27/%3E%3C/svg%27')]" aria-hidden="true" />
-
-    <div class="container relative text-center">
-      <p class="section-label animate-fade-in">Selected Work</p>
-      <h1 class="font-display text-display-lg lg:text-display-xl font-bold mb-6 animate-slide-up">Projects</h1>
-      <p class="text-body-lg text-text-secondary max-w-3xl mx-auto animate-slide-up stagger-1">
-        A curated selection of projects showcasing production-grade MLOps pipelines,
-        predictive analytics with business impact, and scalable full-stack applications.
-      </p>
-    </div>
+<Layout title="Projects | Yassine Hatouf" description="Selected projects demonstrating HR analytics, predictive modeling, and full-stack engineering." image="/portfolio/images/og-image.svg">
+  <header class="pt-32 pb-12 max-w-content mx-auto px-6 lg:px-10">
+    <p class="label-eyebrow mb-3">Case Studies</p>
+    <h1 class="font-display text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Selected work</h1>
+    <p class="text-lg text-ink-secondary max-w-2xl leading-relaxed">Predictive analytics, HR insights, and engineering foundations — with clear business context and documented limitations.</p>
   </header>
 
-  <section class="section bg-bg-secondary relative overflow-hidden" aria-labelledby="projects-heading">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent-secondary/3 to-transparent" aria-hidden="true" />
-    <div class="container relative">
-      <div class="flex flex-wrap justify-center gap-2 mb-10 animate-fade-in" role="tablist" aria-label="Project types">
-        <button
-          data-filter="all"
-          class="badge bg-accent-primary/15 text-accent-primary border-accent-primary/30 px-4 py-2 hover:bg-accent-primary/25"
-          role="tab"
-          aria-selected="true"
-          aria-controls="all-projects"
-        >
-          All Projects
-        </button>
-        {Object.entries(PROJECT_TYPES).map(([key, config]) => (
-          <button
-            key={key}
-            data-filter={key}
-            class="badge bg-bg-tertiary text-text-secondary border-border hover:text-accent-primary hover:border-accent-primary/30 px-4 py-2"
-            role="tab"
-            aria-selected="false"
-            aria-controls={`${key}-projects`}
-          >
-            {config.label}
-          </button>
-        ))}
-      </div>
-
-      <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" role="list" aria-label="All projects">
-        {PROJECTS.map((project, index) => (
-          <ProjectCardInteractive project={project} index={index} client:visible />
-        ))}
-      </div>
-
-      {Object.entries(PROJECT_TYPES).map(([key, config]) => (
-        <div key={key} id={`${key}-projects`} class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" role="list" aria-label={`${config.label} projects`}>
-          {getProjectsByType(key as keyof typeof PROJECT_TYPES).map((project, index) => (
-            <ProjectCardInteractive project={project} index={index} client:visible />
-          ))}
-        </div>
+  <main class="max-w-content mx-auto px-6 lg:px-10 pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {PROJECTS.map(project => (
+        <article class="card-surface flex flex-col">
+          <h2 class="font-display text-xl font-bold text-ink mb-2">{project.title}</h2>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-4">{project.shortDescription}</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            {project.stack.slice(0, 5).map(s => (
+              <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">{s}</span>
+            ))}
+          </div>
+          <a href={`/portfolio/projects/${project.slug}`} class="text-sm font-medium text-accent-green hover:underline mt-auto">Read case study →</a>
+        </article>
       ))}
     </div>
-  </section>
-
-  <section class="section relative overflow-hidden" aria-labelledby="cta-heading">
-    <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-tertiary/5" aria-hidden="true" />
-    <div class="container text-center relative">
-      <h2 id="cta-heading" class="font-display text-display-md font-bold mb-4 animate-fade-in">
-        Want to See More?
-      </h2>
-      <p class="text-text-secondary max-w-xl mx-auto mb-8 animate-slide-up">
-        Check out my GitHub for additional experiments, open-source contributions,
-        and work-in-progress projects.
-      </p>
-      <a
-        href="https://github.com/Yassi0022"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary inline-flex items-center gap-2 animate-slide-up stagger-1"
-      >
-        View All Repositories
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <CaseStudyModal client:visible />
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterButtons = document.querySelectorAll('[data-filter]');
-      const projectLists = document.querySelectorAll('[id$="-projects"]');
-
-      filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filter = btn.getAttribute('data-filter');
-
-          filterButtons.forEach(b => {
-            const isActive = b === btn;
-            b.classList.toggle('bg-accent-primary/15', isActive && filter === 'all');
-            b.classList.toggle('text-accent-primary', isActive && filter === 'all');
-            b.classList.toggle('border-accent-primary/30', isActive && filter === 'all');
-            b.classList.toggle('bg-accent-secondary/15', isActive && filter === 'data-science');
-            b.classList.toggle('text-accent-secondary', isActive && filter === 'data-science');
-            b.classList.toggle('border-accent-secondary/30', isActive && filter === 'data-science');
-            b.classList.toggle('bg-accent-tertiary/15', isActive && filter === 'mlops');
-            b.classList.toggle('text-accent-tertiary', isActive && filter === 'mlops');
-            b.classList.toggle('border-accent-tertiary/30', isActive && filter === 'mlops');
-            b.classList.toggle('bg-accent-primary/15', isActive && filter === 'fullstack');
-            b.classList.toggle('text-accent-primary', isActive && filter === 'fullstack');
-            b.classList.toggle('border-accent-primary/30', isActive && filter === 'fullstack');
-            b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          });
-
-          projectLists.forEach(list => {
-            const listId = list.id;
-            if (filter === 'all') {
-              list.classList.toggle('hidden', listId !== 'all-projects');
-              list.classList.toggle('grid', listId === 'all-projects');
-            } else {
-              list.classList.toggle('hidden', listId !== `${filter}-projects`);
-              list.classList.toggle('grid', listId === `${filter}-projects`);
-            }
-          });
-        });
-      });
-    });
-  </script>
+  </main>
 </Layout>
