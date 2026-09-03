@@ -14,32 +14,32 @@ export interface SkillCategory {
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    id: 'analytics',
-    label: 'Analytics',
+    id: 'engineering',
+    label: 'Software Engineering',
     color: 'accent-green',
-    description: 'Python, SQL, statistics, and exploratory analysis for data-driven decisions.',
+    description: 'Python APIs, SQL design, data pipelines, Docker, version control, reproducible workflows.',
   },
   {
-    id: 'hr',
-    label: 'HR Analytics',
+    id: 'ml',
+    label: 'Machine Learning',
     color: 'accent-amber',
-    description: 'Attrition analysis, feature engineering, explainability, and workforce insights.',
+    description: 'Predictive modeling, XGBoost, SHAP explainability, feature engineering, MLOps practices.',
   },
   {
-    id: 'viz',
-    label: 'Visualization',
+    id: 'data',
+    label: 'Data & Visualization',
     color: 'accent-sage',
-    description: 'Charts, dashboards, and clear communication of analytical results.',
+    description: 'Exploratory analysis, statistics, charts, dashboards, clear communication of results.',
   },
 ];
 
 export const SKILLS: Skill[] = [
-  { id: 'python', name: 'Python', category: 'analytics', description: 'Data analysis, pandas, NumPy, scikit-learn' },
-  { id: 'sql', name: 'SQL', category: 'analytics', description: 'Query design, data wrangling, relational modeling' },
-  { id: 'stats', name: 'Statistics', category: 'analytics', description: 'Hypothesis testing, regression, inferential methods' },
-  { id: 'xgboost', name: 'XGBoost', category: 'hr', description: 'Gradient boosting for predictive attrition modeling' },
-  { id: 'shap', name: 'SHAP', category: 'hr', description: 'Model explainability for HR decision support' },
-  { id: 'optuna', name: 'Optuna', category: 'hr', description: 'Hyperparameter optimization for model tuning' },
-  { id: 'matplotlib', name: 'Matplotlib / Seaborn', category: 'viz', description: 'Publication-quality charts and visual reports' },
-  { id: 'dashboards', name: 'Dashboards', category: 'viz', description: 'Structured reporting and metric tracking' },
+  { id: 'python', name: 'Python', category: 'engineering', description: 'Data analysis, APIs (FastAPI), backend systems, data pipelines' },
+  { id: 'sql', name: 'SQL', category: 'engineering', description: 'Query design, relational modeling, data wrangling, database architecture' },
+  { id: 'stats', name: 'Statistics', category: 'data', description: 'Hypothesis testing, regression, inferential methods, experimental design' },
+  { id: 'xgboost', name: 'XGBoost', category: 'ml', description: 'Gradient boosting, predictive modeling, model evaluation' },
+  { id: 'shap', name: 'SHAP', category: 'ml', description: 'Model explainability, feature importance, interpretability' },
+  { id: 'optuna', name: 'Optuna', category: 'ml', description: 'Hyperparameter optimization, tuning workflows' },
+  { id: 'matplotlib', name: 'Matplotlib / Seaborn', category: 'data', description: 'Publication-quality charts, visual reports, data communication' },
+  { id: 'dashboards', name: 'Dashboards', category: 'data', description: 'Structured reporting, metric tracking, analytical storytelling' },
 ];
