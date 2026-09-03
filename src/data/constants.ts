@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Yassine Hatouf',
-  title: 'Data Scientist & Data Analyst',
-  description: 'I use Python, SQL, statistics, and visual storytelling to understand people and performance. Focused on HR analytics, workforce insights, and clear communication.',
+  title: 'Data Scientist · Software Engineer · ML',
+  description: 'Computer engineering student building data products, machine learning systems, backend APIs, and practical software with Python, Java, SQL, and reproducible engineering workflows.',
   url: 'https://yassi0022.github.io/portfolio',
   github: 'https://github.com/Yassi0022',
   linkedin: 'https://www.linkedin.com/in/yassine-hatouf',
@@ -17,7 +17,7 @@ export const NAV_ITEMS = [
 ];
 
 export const SKILL_CATEGORIES = [
-  { id: 'analytics', label: 'Analytics', color: 'accent-green', icon: 'chart' },
-  { id: 'hr', label: 'HR Analytics', color: 'accent-amber', icon: 'users' },
-  { id: 'viz', label: 'Visualization', color: 'accent-sage', icon: 'bar-chart' },
+  { id: 'engineering', label: 'Software Engineering', color: 'accent-green', icon: 'code' },
+  { id: 'ml', label: 'Machine Learning', color: 'accent-amber', icon: 'brain' },
+  { id: 'data', label: 'Data & Visualization', color: 'accent-sage', icon: 'chart' },
 ] as const;

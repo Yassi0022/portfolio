@@ -3,6 +3,7 @@ export interface Skill {
   name: string;
   category: string;
   description: string;
+  proficiency?: number;
 }
 
 export interface SkillCategory {

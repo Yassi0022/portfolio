@@ -19,15 +19,15 @@ interface SkillNode {
 }
 
 const CATEGORY_COLORS = {
-  ml: '#a855f7',
-  backend: '#00d4aa',
-  people: '#00b8d4',
+  engineering: '#1F6B50',
+  ml: '#D99A3D',
+  data: '#536158',
 };
 
 const CATEGORY_POSITIONS = {
-  ml: { x: 0.25, y: 0.35 },
-  backend: { x: 0.75, y: 0.35 },
-  people: { x: 0.5, y: 0.75 },
+  engineering: { x: 0.25, y: 0.35 },
+  ml: { x: 0.75, y: 0.35 },
+  data: { x: 0.5, y: 0.75 },
 };
 
 export function SkillsVisualization() {
@@ -44,7 +44,7 @@ export function SkillsVisualization() {
   const initializeNodes = useMemo(() => {
     return SKILLS.map(skill => {
       const catPos = CATEGORY_POSITIONS[skill.category as keyof typeof CATEGORY_POSITIONS];
-      const baseRadius = 18 + (skill.proficiency / 100) * 28;
+      const baseRadius = 18 + ((skill.proficiency ?? 75) / 100) * 28;
       return {
         ...skill,
         x: catPos.x * 800 + (Math.random() - 0.5) * 180,
