@@ -27,6 +27,21 @@ const { project } = Astro.props;
     </header>
 
     <div class="max-w-content mx-auto px-6 lg:px-10 pb-20">
+      <!-- Illustrative visual summary -->
+      <section class="mb-16" aria-label="Illustrative project summary">
+        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
+          <img
+            src={project.thumbnail ? `/portfolio${project.thumbnail}` : `/portfolio/images/projects/${project.slug}.svg`}
+            alt={`Illustrative analytical summary for ${project.title} — project architecture and key metrics visualization`}
+            loading="lazy"
+            class="w-full h-auto max-h-[420px] object-cover"
+          />
+          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            Illustrative analytical summary for {project.title}. This visual represents verified project structure, metrics, and architecture from the repository. It is not a screenshot of a live production system or client environment.
+          </figcaption>
+        </figure>
+      </section>
+
       <!-- Metrics -->
       {project.keyMetrics && project.keyMetrics.length > 0 && (
         <section class="mb-16" aria-label="Key metrics">

@@ -43,4 +43,17 @@ import { NAV_ITEMS, SITE_CONFIG } from '@/data/constants';
       ))}
     </div>
   </div>
+  <script is:inline>
+    // Mobile menu: close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const menu = document.getElementById('mobile-menu');
+        const btn = document.getElementById('mobile-menu-btn');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  </script>
 </nav>

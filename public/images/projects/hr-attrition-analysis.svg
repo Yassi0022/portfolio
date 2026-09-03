@@ -1,294 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" aria-label="Illustrative analytical summary — HR Attrition Analysis project architecture and metrics visualization">
   <defs>
     <linearGradient id="bg-main" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0a"/>
-      <stop offset="100%" style="stop-color:#0d1a0d"/>
+      <stop offset="0%" style="stop-color:#F7F8F5"/>
+      <stop offset="100%" style="stop-color:#F1F2EE"/>
     </linearGradient>
-    <linearGradient id="panel-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#101810"/>
-      <stop offset="100%" style="stop-color:#0a120a"/>
-    </linearGradient>
-    <linearGradient id="accent-data" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#4ec9b0"/>
-      <stop offset="100%" style="stop-color:#569cd6"/>
-    </linearGradient>
-    <linearGradient id="accent-ai" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#c586c0"/>
-      <stop offset="100%" style="stop-color:#dcdcaa"/>
-    </linearGradient>
-    <linearGradient id="shap-bar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#c586c0"/>
-      <stop offset="50%" style="stop-color:#dcdcaa"/>
-      <stop offset="100%" style="stop-color:#4ec9b0"/>
-    </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="subtle-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <pattern id="grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#142014" stroke-width="0.5"/>
-    </pattern>
   </defs>
-
   <rect width="800" height="450" fill="url(#bg-main)"/>
-  <rect width="800" height="450" fill="url(#grid-pattern)" opacity="0.3"/>
 
-  <!-- Jupyter Header -->
-  <rect x="0" y="0" width="800" height="56" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-  <text x="32" y="35" font-family="Space Grotesk, sans-serif" font-size="18" fill="#f5f5f5" font-weight="700">HR Attrition Analysis — Predictive Modeling</text>
-  <text x="32" y="50" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#6a7a6a">Pandas • XGBoost • SHAP • Optuna • Scikit-learn • Jupyter</text>
+  <!-- Title -->
+  <text x="400" y="48" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="700" fill="#1F6B50">HR Attrition Analysis — Illustrative Summary</text>
+  <text x="400" y="72" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#536158">Predictive modeling using IBM HR dataset (1,470 records, 35 features, 16% attrition)</text>
 
-  <!-- Left Panel: Code / Process -->
-  <g transform="translate(32, 80)">
-    <rect width="360" height="338" rx="10" fill="url(#panel-bg)" stroke="#1a2a1a" stroke-width="1" filter="url(#subtle-glow)"/>
-    
-    <!-- Cell 1: Data Loading -->
-    <g transform="translate(16, 16)">
-      <rect width="328" height="64" rx="6" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-      <text x="8" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#4ec9b0" font-weight="600">In [1]:</text>
-      <text x="50" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7a6a">Load & Explore HR Dataset</text>
-      
-      <g font-family="JetBrains Mono, monospace" font-size="9" transform="translate(8, 36)">
-        <tspan x="0" y="0" fill="#c586c0">df =</tspan>
-        <tspan x="28" y="0" fill="#d4d4d4">pd.read_csv(</tspan>
-        <tspan x="90" y="0" fill="#ce9178">'data/hr_attrition.csv'</tspan>
-        <tspan x="210" y="0" fill="#d4d4d4">)</tspan>
-        <tspan x="0" y="16" fill="#dcdcaa"># 1,470 employees • 35 features • 16.1% attrition rate</tspan>
-      </g>
-    </g>
-
-    <!-- Cell 2: Feature Engineering -->
-    <g transform="translate(16, 90)">
-      <rect width="328" height="80" rx="6" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-      <text x="8" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#4ec9b0" font-weight="600">In [2]:</text>
-      <text x="50" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7a6a">Feature Engineering (14 → 47)</text>
-      
-      <g font-family="JetBrains Mono, monospace" font-size="8.5" transform="translate(8, 36)">
-        <tspan x="0" y="0" fill="#dcdcaa"># Domain-driven features</tspan>
-        <tspan x="0" y="14" fill="#d4d4d4">df[</tspan><tspan x="18" y="14" fill="#ce9178">'tenure_band'</tspan><tspan x="78" y="14" fill="#d4d4d4">] = pd.qcut(df.tenure, 5)</tspan>
-        <tspan x="0" y="28" fill="#d4d4d4">df[</tspan><tspan x="18" y="28" fill="#ce9178">'comp_ratio'</tspan><tspan x="78" y="28" fill="#d4d4d4">] = df.income / df.groupby(</tspan><tspan x="195" y="28" fill="#ce9178">'role'</tspan><tspan x="225" y="28" fill="#d4d4d4">).income.transform(</tspan><tspan x="290" y="28" fill="#ce9178">'median'</tspan><tspan x="325" y="28" fill="#d4d4d4">)</tspan>
-        <tspan x="0" y="42" fill="#d4d4d4">df[</tspan><tspan x="18" y="42" fill="#ce9178">'promo_velocity'</tspan><tspan x="90" y="42" fill="#d4d4d4">] = df.promos / (df.years + 1)</tspan>
-        <tspan x="0" y="56" fill="#d4d4d4">df[</tspan><tspan x="18" y="56" fill="#ce9178">'sat_trend'</tspan><tspan x="78" y="56" fill="#d4d4d4">] = df.satisfaction.rolling(3).mean()</tspan>
-      </g>
-    </g>
-
-    <!-- Cell 3: Model Training -->
-    <g transform="translate(16, 180)">
-      <rect width="328" height="70" rx="6" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-      <text x="8" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#4ec9b0" font-weight="600">In [3]:</text>
-      <text x="50" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7a6a">XGBoost + Optuna Optimization</text>
-      
-      <g font-family="JetBrains Mono, monospace" font-size="9" transform="translate(8, 36)">
-        <tspan x="0" y="0" fill="#c586c0">model =</tspan>
-        <tspan x="28" y="0" fill="#d4d4d4">XGBClassifier(</tspan>
-        <tspan x="110" y="0" fill="#d4d4d4">n_estimators=500, max_depth=6,</tspan>
-        <tspan x="0" y="14" fill="#d4d4d4">learning_rate=0.05, subsample=0.8</tspan>
-        <tspan x="0" y="28" fill="#d4d4d4">)</tspan>
-        <tspan x="0" y="42" fill="#dcdcaa"># Optuna: 100 trials • CV=5 • maximize ROC-AUC</tspan>
-      </g>
-    </g>
-
-    <!-- Cell 4: SHAP Analysis -->
-    <g transform="translate(16, 260)">
-      <rect width="328" height="70" rx="6" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-      <text x="8" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#4ec9b0" font-weight="600">In [4]:</text>
-      <text x="50" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a7a6a">SHAP Interpretability</text>
-      
-      <g font-family="JetBrains Mono, monospace" font-size="9" transform="translate(8, 36)">
-        <tspan x="0" y="0" fill="#c586c0">explainer =</tspan>
-        <tspan x="45" y="0" fill="#d4d4d4">shap.TreeExplainer(model)</tspan>
-        <tspan x="0" y="14" fill="#d4d4d4">shap_values = explainer.shap_values(X_test)</tspan>
-        <tspan x="0" y="28" fill="#dcdcaa"># Beeswarm + Bar + Dependence + Waterfall</tspan>
-        <tspan x="0" y="42" fill="#4ec9b0">shap.plots.beeswarm(shap_values)</tspan>
-      </g>
-    </g>
+  <!-- Three evidence panels -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="#FFFFFF" stroke="#DDE4DC" stroke-width="1"/>
+    <text x="110" y="28" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#17211B">Key Metrics</text>
+    <text x="110" y="55" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">Verified project benchmarks</text>
+    <!-- Metric lines -->
+    <text x="20" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#17211B">ROC-AUC: 0.91</text>
+    <text x="20" y="100" font-family="JetBrains Mono, monospace" font-size="11" fill="#17211B">Precision@10%: 0.78</text>
+    <text x="20" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="#D99A3D">$2.3M (project-level estimate)</text>
   </g>
 
-  <!-- Right Panel: Visual Results -->
-  <g transform="translate(412, 80)">
-    <rect width="356" height="338" rx="10" fill="url(#panel-bg)" stroke="#1a2a1a" stroke-width="1" filter="url(#subtle-glow)"/>
-
-    <!-- SHAP Beeswarm (top) -->
-    <g transform="translate(16, 16)">
-      <text x="0" y="0" font-family="Space Grotesk, sans-serif" font-size="13" fill="#f5f5f5" font-weight="600">SHAP Beeswarm — Feature Impact</text>
-      <text x="0" y="16" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#6a7a6a">Each dot = one employee • Color = feature value • X = impact on attrition</text>
-      
-      <!-- Beeswarm chart area -->
-      <g transform="translate(0, 24)" clip-path="url(#chart-clip)">
-        <defs>
-          <clipPath id="chart-clip">
-            <rect x="0" y="0" width="324" height="140"/>
-          </clipPath>
-        </defs>
-        
-        <!-- Y labels -->
-        <g font-family="JetBrains Mono, monospace" font-size="9" fill="#a0b0a0">
-          <text x="0" y="12" text-anchor="end">OverTime_Yes</text>
-          <text x="0" y="32" text-anchor="end">CompRatio</text>
-          <text x="0" y="52" text-anchor="end">TenureBand</text>
-          <text x="0" y="72" text-anchor="end">JobSatTrend</text>
-          <text x="0" y="92" text-anchor="end">PromoVelocity</text>
-          <text x="0" y="112" text-anchor="end">Age</text>
-          <text x="0" y="132" text-anchor="end">DistanceHome</text>
-        </g>
-
-        <!-- Beeswarm dots -->
-        <g transform="translate(100, 0)">
-          <!-- OverTime_Yes - HIGH IMPACT -->
-          <g fill-opacity="0.75">
-            <circle cx="120" cy="6" r="3" fill="#c586c0"/><circle cx="128" cy="6" r="3" fill="#c586c0"/>
-            <circle cx="112" cy="8" r="3" fill="#c586c0"/><circle cx="136" cy="4" r="2.5" fill="#dcdcaa"/>
-            <circle cx="104" cy="10" r="2.5" fill="#dcdcaa"/><circle cx="144" cy="7" r="2" fill="#4ec9b0"/>
-            <circle cx="96" cy="5" r="2" fill="#4ec9b0"/><circle cx="152" cy="9" r="2" fill="#4ec9b0"/>
-            <circle cx="88" cy="7" r="2" fill="#4ec9b0"/><circle cx="160" cy="5" r="1.5" fill="#4ec9b0"/>
-          </g>
-          <!-- CompRatio -->
-          <g fill-opacity="0.75">
-            <circle cx="95" cy="26" r="3" fill="#c586c0"/><circle cx="102" cy="26" r="3" fill="#c586c0"/>
-            <circle cx="88" cy="28" r="3" fill="#c586c0"/><circle cx="110" cy="24" r="2.5" fill="#dcdcaa"/>
-            <circle cx="80" cy="30" r="2.5" fill="#dcdcaa"/><circle cx="118" cy="27" r="2" fill="#4ec9b0"/>
-            <circle cx="72" cy="25" r="2" fill="#4ec9b0"/><circle cx="126" cy="29" r="2" fill="#4ec9b0"/>
-          </g>
-          <!-- TenureBand -->
-          <g fill-opacity="0.75">
-            <circle cx="80" cy="46" r="3" fill="#c586c0"/><circle cx="87" cy="46" r="3" fill="#c586c0"/>
-            <circle cx="73" cy="48" r="3" fill="#c586c0"/><circle cx="95" cy="44" r="2.5" fill="#dcdcaa"/>
-            <circle cx="65" cy="50" r="2.5" fill="#dcdcaa"/><circle cx="103" cy="47" r="2" fill="#4ec9b0"/>
-            <circle cx="57" cy="45" r="2" fill="#4ec9b0"/>
-          </g>
-          <!-- JobSatTrend -->
-          <g fill-opacity="0.75">
-            <circle cx="65" cy="66" r="3" fill="#c586c0"/><circle cx="72" cy="66" r="3" fill="#c586c0"/>
-            <circle cx="58" cy="68" r="3" fill="#c586c0"/><circle cx="80" cy="64" r="2.5" fill="#dcdcaa"/>
-            <circle cx="50" cy="70" r="2.5" fill="#dcdcaa"/>
-          </g>
-          <!-- PromoVelocity -->
-          <g fill-opacity="0.75">
-            <circle cx="55" cy="86" r="3" fill="#c586c0"/><circle cx="62" cy="86" r="3" fill="#c586c0"/>
-            <circle cx="48" cy="88" r="3" fill="#c586c0"/>
-          </g>
-          <!-- Age -->
-          <g fill-opacity="0.75">
-            <circle cx="40" cy="106" r="3" fill="#c586c0"/><circle cx="47" cy="106" r="3" fill="#c586c0"/>
-          </g>
-          <!-- DistanceHome -->
-          <g fill-opacity="0.75">
-            <circle cx="30" cy="126" r="3" fill="#c586c0"/>
-          </g>
-
-          <!-- X axis -->
-          <line x1="0" y1="145" x2="180" y2="145" stroke="#2a3a2a" stroke-width="1"/>
-          <text x="-5" y="158" font-family="JetBrains Mono, monospace" font-size="7" fill="#6a7a6a" text-anchor="end">-0.4</text>
-          <text x="180" y="158" font-family="JetBrains Mono, monospace" font-size="7" fill="#6a7a6a" text-anchor="start">+0.4</text>
-          <text x="90" y="158" font-family="JetBrains Mono, monospace" font-size="7" fill="#6a7a6a" text-anchor="middle">0.0</text>
-        </g>
-
-        <!-- Color legend -->
-        <g transform="translate(100, 150)">
-          <rect x="0" y="0" width="80" height="8" fill="url(#shap-bar)"/>
-          <text x="0" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="#6a7a6a">Low value</text>
-          <text x="80" y="18" font-family="JetBrains Mono, monospace" font-size="7" fill="#c586c0" text-anchor="end">High value</text>
-        </g>
-      </g>
-    </g>
-
-    <!-- Feature Importance Bars (middle) -->
-    <g transform="translate(16, 190)">
-      <text x="0" y="0" font-family="Space Grotesk, sans-serif" font-size="13" fill="#f5f5f5" font-weight="600">XGBoost Feature Importance (Gain)</text>
-      
-      <g transform="translate(0, 18)" font-family="JetBrains Mono, monospace" font-size="9">
-        <g transform="translate(0, 0)">
-          <rect x="100" y="0" width="220" height="16" rx="3" fill="url(#shap-bar)" filter="url(#glow)"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">OverTime_Yes</text>
-          <text x="330" y="12" fill="#4ec9b0" font-weight="700" text-anchor="end">0.234</text>
-        </g>
-        <g transform="translate(0, 22)">
-          <rect x="100" y="0" width="192" height="16" rx="3" fill="url(#shap-bar)" filter="url(#glow)" opacity="0.9"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">CompRatio</text>
-          <text x="302" y="12" fill="#4ec9b0" font-weight="700" text-anchor="end">0.205</text>
-        </g>
-        <g transform="translate(0, 44)">
-          <rect x="100" y="0" width="165" height="16" rx="3" fill="url(#accent-data)" filter="url(#glow)" opacity="0.85"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">TenureBand</text>
-          <text x="275" y="12" fill="#4ec9b0" font-weight="700" text-anchor="end">0.176</text>
-        </g>
-        <g transform="translate(0, 66)">
-          <rect x="100" y="0" width="142" height="16" rx="3" fill="url(#accent-data)" opacity="0.8"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">JobSatTrend</text>
-          <text x="252" y="12" fill="#4ec9b0" font-weight="700" text-anchor="end">0.151</text>
-        </g>
-        <g transform="translate(0, 88)">
-          <rect x="100" y="0" width="122" height="16" rx="3" fill="#569cd6" opacity="0.75"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">PromoVelocity</text>
-          <text x="232" y="12" fill="#569cd6" font-weight="700" text-anchor="end">0.130</text>
-        </g>
-        <g transform="translate(0, 110)">
-          <rect x="100" y="0" width="102" height="16" rx="3" fill="#569cd6" opacity="0.7"/>
-          <text x="0" y="12" fill="#f5f5f5" font-weight="600" text-anchor="end">Age</text>
-          <text x="212" y="12" fill="#569cd6" font-weight="700" text-anchor="end">0.109</text>
-        </g>
-      </g>
-    </g>
-
-    <!-- ROC Curve + Metrics (bottom) -->
-    <g transform="translate(16, 340)">
-      <text x="0" y="0" font-family="Space Grotesk, sans-serif" font-size="13" fill="#f5f5f5" font-weight="600">Model Performance</text>
-      
-      <g transform="translate(0, 16)">
-        <!-- ROC Mini Chart -->
-        <g transform="translate(0, 0)">
-          <rect width="160" height="100" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5" rx="4"/>
-          <!-- ROC curves -->
-          <path d="M10,90 C25,80 50,50 80,30 C110,10 140,5 150,5" fill="none" stroke="url(#accent-data)" stroke-width="2.5"/>
-          <path d="M10,90 C35,75 70,50 110,30 C140,10 150,5 150,5" fill="none" stroke="#569cd6" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7"/>
-          <path d="M10,90 L150,5" fill="none" stroke="#6a7a6a" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
-          <!-- Axes -->
-          <line x1="10" y1="10" x2="10" y2="90" stroke="#2a3a2a" stroke-width="1"/>
-          <line x1="10" y1="90" x2="150" y2="90" stroke="#2a3a2a" stroke-width="1"/>
-        </g>
-        
-        <!-- Metrics -->
-        <g transform="translate(180, 0)" font-family="Space Grotesk, sans-serif">
-          <rect width="160" height="100" rx="6" fill="#0a120a" stroke="#1a2a1a" stroke-width="0.5"/>
-          
-          <g transform="translate(16, 18)">
-            <text x="0" y="0" fill="#6a7a6a" font-size="10" font-weight="500">ROC-AUC</text>
-            <text x="0" y="22" fill="#4ec9b0" font-size="26" font-weight="700">0.91</text>
-          </g>
-          
-          <g transform="translate(16, 58)">
-            <text x="0" y="0" fill="#6a7a6a" font-size="10" font-weight="500">Precision@10%</text>
-            <text x="0" y="22" fill="#dcdcaa" font-size="26" font-weight="700">0.78</text>
-          </g>
-        </g>
-      </g>
-    </g>
+  <g transform="translate(290, 100)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="#FFFFFF" stroke="#DDE4DC" stroke-width="1"/>
+    <text x="110" y="28" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#17211B">Approach</text>
+    <text x="110" y="55" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">Domain-driven feature engineering + SHAP</text>
+    <text x="20" y="80" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">47 engineered features</text>
+    <text x="20" y="100" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">XGBoost with Optuna tuning</text>
+    <text x="20" y="120" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">SHAP explainability for HR stakeholders</text>
   </g>
 
-  <!-- Bottom Summary Bar -->
-  <g transform="translate(32, 428)" font-family="Space Grotesk, sans-serif" font-size="11">
-    <rect width="736" height="4" rx="2" fill="url(#accent-data)" opacity="0.15"/>
-    
-    <g transform="translate(0, -8)">
-      <text x="0" y="0" fill="#4ec9b0" font-weight="700">ROC-AUC: 0.91</text>
-      <text x="110" y="0" fill="#6a7a6a">•</text>
-      <text x="120" y="0" fill="#dcdcaa" font-weight="700">Precision@10%: 0.78</text>
-      <text x="245" y="0" fill="#6a7a6a">•</text>
-      <text x="255" y="0" fill="#569cd6" font-weight="700">Features: 47</text>
-      <text x="355" y="0" fill="#6a7a6a">•</text>
-      <text x="365" y="0" fill="#c586c0" font-weight="700">Business Impact: $2.3M/yr</text>
-      <text x="520" y="0" fill="#6a7a6a">•</text>
-      <text x="530" y="0" fill="#8a9a8a" font-size="10">Top drivers: Overtime, Compensation, Tenure, Satisfaction</text>
-    </g>
+  <g transform="translate(530, 100)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="#FFFFFF" stroke="#DDE4DC" stroke-width="1"/>
+    <text x="110" y="28" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#17211B">Limitations</text>
+    <text x="110" y="55" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">Not a validated client outcome</text>
+    <text x="20" y="80" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#536158">IBM public dataset; results reflect benchmark conditions.</text>
+    <text x="20" y="100" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#536158">No causal inference claimed; SHAP shows association.</text>
+    <text x="20" y="120" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#536158">Fairness audit required before real deployment.</text>
   </g>
+
+  <!-- Pipeline flow -->
+  <text x="400" y="280" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="600" fill="#1F6B50">Pipeline: Raw HR Data → Feature Engineering → XGBoost → SHAP → Business Recommendations</text>
+
+  <!-- Bottom note -->
+  <rect x="50" y="300" width="700" height="80" rx="8" fill="#F1F2EE" stroke="#EBEDE8" stroke-width="1"/>
+  <text x="400" y="325" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#536158">This is an illustrative analytical summary. It represents verified project structure and metrics from the repository. It is not a screenshot of a live production system.</text>
+  <text x="400" y="345" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#8D9A94">All metrics come from verified repository data: IBM dataset (1,470 records, 35 features), ROC-AUC 0.91, Precision@Top 10% 0.78, estimated savings $2.3M.</text>
+  <text x="400" y="365" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#A8C3AE">Case study: /portfolio/projects/hr-attrition-analysis</text>
 </svg>

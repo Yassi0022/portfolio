@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
 };
 
 export const NAV_ITEMS = [
-  { label: 'About', href: '/portfolio/' },
+  { label: 'About', href: '/portfolio/#profile' },
   { label: 'Case Studies', href: '/portfolio/#projects' },
   { label: 'Skills', href: '/portfolio/#skills' },
   { label: 'Contact', href: '/portfolio/#contact' },
