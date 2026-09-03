@@ -8,31 +8,57 @@ import ContactSection from '@/components/contact/ContactSection.astro';
 
 <Layout title="Yassine Hatouf — Data Scientist & Data Analyst" description="Using data to understand people and performance. HR analytics, predictive modeling, and clear communication." image="/portfolio/images/og-image.svg">
   <Hero />
+
+  <section id="profile" class="section-padding bg-surface-subtle" aria-labelledby="profile-heading">
+    <div class="max-w-content mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-7">
+          <p class="label-eyebrow mb-3">About</p>
+          <h2 id="profile-heading" class="font-display text-2xl lg:text-3xl font-bold text-ink mb-5">Computer engineering and work psychology, applied to people data.</h2>
+          <div class="space-y-4 text-ink-secondary leading-relaxed">
+            <p>I approach analytics as both a technical and organizational discipline. My background in computer engineering gives me the foundation to build reproducible data pipelines, predictive models, and clean APIs. My work in organizational psychology helps me ask the right questions about workforce behavior, measurement design, and what data actually means in a business context.</p>
+            <p>This combination is most valuable in HR analytics: turning attrition predictions into retention strategies, making feature engineering interpretable with SHAP, and communicating results to both technical and non-technical stakeholders.</p>
+            <p>Currently focused on predictive analytics, explainable ML, and practical software that supports data-driven workforce decisions. I work primarily with Python, SQL, Pandas, Scikit-Learn, XGBoost, and SHAP.</p>
+          </div>
+        </div>
+        <aside class="lg:col-span-5 bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm" aria-label="Profile details">
+          <h3 class="font-display text-base font-bold text-ink mb-4">Profile at a glance</h3>
+          <ul class="space-y-3 text-sm text-ink-secondary">
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Computer engineering student with a focus on practical systems and reproducible analysis.</li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Work psychology orientation — survey design, psychometrics, and organizational insight.</li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Predictive modeling: XGBoost, Optuna tuning, SHAP explainability, feature engineering.</li>
+            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Software foundations: Python APIs, SQL, data pipelines, Docker, version control.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <ProjectsSection />
   <SkillsSection />
 
-  <section id="how-i-work" class="section-padding bg-dark-section text-dark-section-text" aria-labelledby="approach-heading">
+  <section id="how-i-work" class="section-padding bg-surface-subtle" aria-labelledby="approach-heading">
     <div class="max-w-content mx-auto px-6 lg:px-10">
       <header class="mb-12 lg:mb-16 max-w-2xl">
-        <p class="label-eyebrow mb-3 text-accent-sage">Approach</p>
-        <h2 id="approach-heading" class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">How I work</h2>
-        <p class="text-lg text-white/80 leading-relaxed">
+        <p class="label-eyebrow mb-3">Approach</p>
+        <h2 id="approach-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">How I work</h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">
           Analysis is a conversation, not a presentation. I clarify the question, check the data, build the model, explain the result — and always include what could be wrong.
         </p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
-          <h3 class="font-display text-lg font-bold text-white mb-3">Clarify the question</h3>
-          <p class="text-sm text-white/70 leading-relaxed">I start with the business or research problem, not the dataset. What decision will this inform? Who needs to understand it?</p>
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Clarify the question</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">I start with the business or research problem, not the dataset. What decision will this inform? Who needs to understand it?</p>
         </article>
-        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
-          <h3 class="font-display text-lg font-bold text-white mb-3">Build with evidence</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Every model includes validation, every chart includes context, and every recommendation notes its limitations.</p>
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Build with evidence</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">Every model includes validation, every chart includes context, and every recommendation notes its limitations.</p>
         </article>
-        <article class="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
-          <h3 class="font-display text-lg font-bold text-white mb-3">Communicate clearly</h3>
-          <p class="text-sm text-white/70 leading-relaxed">Results are written for the reader — not the model. Metrics are labeled, caveats are explicit, and visuals tell one story.</p>
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Communicate clearly</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">Results are written for the reader — not the model. Metrics are labeled, caveats are explicit, and visuals tell one story.</p>
         </article>
       </div>
     </div>
