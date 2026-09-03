@@ -6,7 +6,7 @@ import SkillsSection from '@/components/skills/SkillsSection.astro';
 import ContactSection from '@/components/contact/ContactSection.astro';
 ---
 
-<Layout title="Yassine Hatouf — Data Scientist & Data Analyst" description="Using data to understand people and performance. HR analytics, predictive modeling, and clear communication." image="/portfolio/images/og-image.svg">
+<Layout title="Yassine Hatouf — Data Science, Java Backend & Software Portfolio" description="Computer engineering student and freelance data analyst / software developer building data products, Java backend systems, APIs, machine learning projects, and practical software applications with Python, SQL, and reproducible engineering workflows." image="/portfolio/images/og-image.svg">
   <Hero />
 
   <section id="profile" class="section-padding bg-surface-subtle" aria-labelledby="profile-heading">
@@ -16,12 +16,18 @@ import ContactSection from '@/components/contact/ContactSection.astro';
           <p class="label-eyebrow mb-3">About</p>
           <h2 id="profile-heading" class="font-display text-2xl lg:text-3xl font-bold text-ink mb-5">Engineering, data, and applied analytical thinking.</h2>
           <div class="space-y-4 text-ink-secondary leading-relaxed">
-            <p>I am a computer engineering student focused on data analysis, machine learning, backend systems, and practical software development. I build reproducible analyses, APIs, data pipelines, and applications designed to make complex information useful and reliable.</p>
+            <p>I am a computer engineering student, freelance data analyst, and software developer focused on data analysis, machine learning, backend systems, and practical software engineering. I build reproducible analyses, APIs, data pipelines, and applications designed to make complex information useful and reliable.</p>
             <p>My academic background in work and organizational psychology provides a complementary domain perspective for selected projects involving people, organizations, HR analytics, and decision-making. It strengthens my ability to frame questions, interpret results, and communicate clearly — without replacing the technical focus.</p>
-            <p>Currently focused on predictive analytics, explainable ML, and practical software that supports data-driven workforce decisions. I work primarily with Python, SQL, Pandas, Scikit-Learn, XGBoost, and SHAP.</p>
+            <p>Currently focused on predictive analytics, explainable ML, practical software and backend development, and data-driven workforce decisions. I work primarily with Python, Java, SQL, Pandas, Scikit-Learn, XGBoost, and SHAP.</p>
           </div>
         </div>
         <aside class="lg:col-span-5 bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm" aria-label="Profile details">
+          <div class="mb-5">
+            <div class="w-20 h-20 rounded-full bg-ink text-white flex items-center justify-center text-2xl font-display font-bold shadow-sm" aria-label="Profile initial placeholder">
+              YH
+            </div>
+            <p class="text-[10px] text-ink-muted mt-2">Profile photo: please add a verified image at <code>public/images/profile.jpg</code> or <code>public/images/profile.webp</code>. This placeholder will be replaced automatically when the file exists.</p>
+          </div>
           <h3 class="font-display text-base font-bold text-ink mb-4">Profile at a glance</h3>
           <ul class="space-y-3 text-sm text-ink-secondary">
             <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Computer engineering student with a focus on practical systems and reproducible analysis.</li>
@@ -38,6 +44,41 @@ import ContactSection from '@/components/contact/ContactSection.astro';
   </section>
 
   <ProjectsSection />
+
+  <!-- Additional Engineering Work -->
+  <section id="additional-work" class="section-padding bg-surface-subtle" aria-labelledby="additional-work-heading">
+    <div class="max-w-content mx-auto px-6 lg:px-10">
+      <header class="mb-10 lg:mb-14 max-w-2xl">
+        <p class="label-eyebrow mb-3">Engineering Work</p>
+        <h2 id="additional-work-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Additional engineering work</h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">Beyond the three case studies above, my professional profile also includes practical applications in backend development, data management, and software engineering. These projects are described from my public professional profile and are available for discussion or review upon request.</p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink mb-4">Java · OOP · Backend</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-3">HR Management System</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Java backend application for employee data management and organizational workflows, using object-oriented design and database integration.</p>
+          <p class="text-xs text-ink-muted">No public live demo or detailed metrics available. Details available on request.</p>
+        </article>
+
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-ink mb-4">Python · SQL · Data Pipeline</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-3">JobMarketRadar</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Data pipeline for collecting, cleaning, and analyzing labor-market trends. Uses Python, Pandas, SQL, and structured data workflows.</p>
+          <p class="text-xs text-ink-muted">Live scraping status and output dashboards are not verified in this repository. Description reflects professional profile only.</p>
+        </article>
+
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-sage/10 text-ink mb-4">Java · SQL · Application</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-3">Library / Run Tracker</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Applications focused on clean code, data management, and robust backend logic with database integration.</p>
+          <p class="text-xs text-ink-muted">Concise reference from professional profile; no public screenshots or metrics included.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <SkillsSection />
 
   <section id="how-i-work" class="section-padding bg-surface-subtle" aria-labelledby="approach-heading">
