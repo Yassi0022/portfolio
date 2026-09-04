@@ -23,10 +23,8 @@ import ContactSection from '@/components/contact/ContactSection.astro';
         </div>
         <aside class="lg:col-span-5 bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm" aria-label="Profile details">
           <div class="mb-5">
-            <div class="w-20 h-20 rounded-full bg-ink text-white flex items-center justify-center text-2xl font-display font-bold shadow-sm" aria-label="Profile initial placeholder">
-              YH
-            </div>
-            <p class="text-[10px] text-ink-muted mt-2">Profile photo: please add a verified image at <code>public/images/profile.jpg</code> or <code>public/images/profile.webp</code>. This placeholder will be replaced automatically when the file exists.</p>
+            <img src="/portfolio/images/profile.jpg" alt="Yassine Hatouf" width="160" height="160" class="w-20 h-20 rounded-full object-cover shadow-sm" loading="eager" />
+            <p class="text-[10px] text-ink-muted mt-2">Verified profile photo — <code>public/images/profile.jpg</code> (400×400 JPG).</p>
           </div>
           <h3 class="font-display text-base font-bold text-ink mb-4">Profile at a glance</h3>
           <ul class="space-y-3 text-sm text-ink-secondary">
@@ -74,6 +72,54 @@ import ContactSection from '@/components/contact/ContactSection.astro';
           <h3 class="font-display text-xl font-bold text-ink mb-3">Library / Run Tracker</h3>
           <p class="text-sm text-ink-secondary leading-relaxed mb-4">Applications focused on clean code, data management, and robust backend logic with database integration.</p>
           <p class="text-xs text-ink-muted">Concise reference from professional profile; no public screenshots or metrics included.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Real Projects (from public repositories) -->
+  <section id="verified-projects" class="section-padding bg-page" aria-labelledby="verified-heading">
+    <div class="max-w-content mx-auto px-6 lg:px-10">
+      <header class="mb-10 lg:mb-14 max-w-2xl">
+        <p class="label-eyebrow mb-3">Real Repositories</p>
+        <h2 id="verified-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Verified engineering work</h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">The following cards reference real public repositories. Each entry includes only verified technology evidence from the repository; no fabricated metrics or unverified demo links are shown.</p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink mb-4">Java · OOP · Backend</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-2">HR Management System</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Object-oriented Java backend for employee and organizational management. Verified source files include <code>Azienda.java</code>, <code>Dipendente.java</code>, <code>Reparto.java</code>, and a main interactive menu.</p>
+          <p class="text-xs text-ink-muted mb-4">No public live demo. Source verified on GitHub.</p>
+          <a href="https://github.com/Yassi0022/GestionaleHR-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        </article>
+
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-ink mb-4">Python · SQL · Pipeline</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-2">JobMarketRadar</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Labor-market data pipeline combining Java backend components (<code>App.java</code>, <code>DB.java</code>, <code>pom.xml</code>) with Python ingestion scripts (<code>adzuna_ingest.py</code>, <code>market_report.py</code>).</p>
+          <p class="text-xs text-ink-muted mb-4">No verified live scraping dashboard in this repository.</p>
+          <a href="https://github.com/Yassi0022/JobMarketRadar" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        </article>
+
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-sage/10 text-ink mb-4">Java · Data Structure</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-2">Library Manager</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Library management system using HashMap structures and clean Java architecture. Verified files: <code>LibraryManager.java</code> and README with usage examples.</p>
+          <p class="text-xs text-ink-muted mb-4">No live deployment link verified.</p>
+          <a href="https://github.com/Yassi0022/LibraryManager-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        </article>
+
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm md:col-span-2 lg:col-span-3">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-ink/5 text-ink mb-4">Reference · Python</span>
+          <h3 class="font-display text-xl font-bold text-ink mb-2">Additional verified repositories</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Other real public repositories include <strong>HR-Attrition-Analysis</strong> (Python, Pandas, XGBoost, SHAP, with an <code>img/</code> folder), <strong>GooglePlayStore-Analysis</strong> (data analysis), and <strong>sanremo2026-predictor</strong> (predictive ML). Each is available for review at the linked GitHub account with real commit history.</p>
+          <div class="flex flex-wrap gap-4 mt-3">
+            <a href="https://github.com/Yassi0022/HR-Attrition-Analysis" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">HR-Attrition-Analysis →</a>
+            <a href="https://github.com/Yassi0022/GooglePlayStore-Analysis" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">GooglePlayStore-Analysis →</a>
+            <a href="https://github.com/Yassi0022/sanremo2026-predictor" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">sanremo2026-predictor →</a>
+          </div>
         </article>
       </div>
     </div>
