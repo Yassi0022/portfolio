@@ -125,6 +125,40 @@ import ContactSection from '@/components/contact/ContactSection.astro';
     </div>
   </section>
 
+  <!-- Real Project Evidence (verified charts from actual repositories) -->
+  <section id="real-evidence" class="section-padding bg-surface-subtle" aria-labelledby="evidence-heading">
+    <div class="max-w-content mx-auto px-6 lg:px-10">
+      <header class="mb-10 lg:mb-14 max-w-2xl">
+        <p class="label-eyebrow mb-3">Evidence</p>
+        <h2 id="evidence-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Real analytical charts</h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">These visuals are generated directly from real source data and scripts in the verified repositories. They are not decorative illustrations.</p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
+          <img src="/portfolio/images/projects/charts/attrition_by_overtime.png" alt="Real chart: attrition by overtime status from IBM HR Analytics dataset" class="w-full h-auto" loading="lazy" />
+          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong>Figure — Attrition by overtime.</strong> Generated from <code>../attrition/img/attrition_by_overtime.png</code> via <code>2_visuals.py</code> on the IBM HR Analytics dataset (<code>WA_Fn-UseC_-HR-Employee-Attrition.csv</code>, 1,470 records). Real chart, not an illustration.
+          </figcaption>
+        </figure>
+
+        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
+          <img src="/portfolio/images/projects/charts/feature_importance.png" alt="Real chart: feature importance from Random Forest model" class="w-full h-auto" loading="lazy" />
+          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong>Figure — Feature importance (Random Forest).</strong> Generated from <code>../attrition/img/feature_importance.png</code> using <code>4b_feature_importance.py</code> and saved model <code>models/random_forest.joblib</code>. Real output from the project repository.
+          </figcaption>
+        </figure>
+
+        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm md:col-span-2">
+          <img src="/portfolio/images/projects/charts/roc_curve_random_forest.png" alt="Real chart: ROC curve from Random Forest evaluation" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong>Figure — ROC curve (Random Forest).</strong> Produced by <code>4_model.py</code>; verified benchmark AUC = 0.784 from <code>models/random_forest_metrics.json</code>. This is a real evaluation chart from the project's evaluation pipeline, not a synthetic plot. The dataset is public (IBM benchmark); results are project-level benchmarks, not validated production claims.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <SkillsSection />
 
   <section id="how-i-work" class="section-padding bg-surface-subtle" aria-labelledby="approach-heading">

@@ -279,6 +279,53 @@ def _get_actions(drivers: list) -> list[str]:
 
 ---
 
+## Project Visual Evidence
+
+These charts are generated directly from the IBM HR Analytics dataset (`WA_Fn-UseC_-HR-Employee-Attrition.csv`) and the project's analysis scripts (`2_visuals.py`, `4_model.py`, `4b_feature_importance.py`). Each image is a real output, not an illustration.
+
+### Attrition by Overtime
+Real chart from dataset analysis. Shows the proportion of employees who left (`Yes`) versus stayed (`No`) split by whether they work overtime.
+
+![Attrition by overtime](/portfolio/images/projects/charts/attrition_by_overtime.png)
+
+*Figure: Attrition by overtime status — computed from the IBM public HR dataset. This is a real analytical chart from the project source (`attrition/img/attrition_by_overtime.png`), not a decorative graphic.*
+
+### Feature Importance (Random Forest)
+Real model output. Shows the top predictive drivers from the trained model (`models/random_forest.joblib`, `feature_importance_full_dataset.csv`).
+
+![Feature importance](/portfolio/images/projects/charts/feature_importance.png)
+
+*Figure: Feature importance from the project's Random Forest model — derived from `models/feature_importance_full_dataset.csv`. The actual dataset and model files are in the `attrition/` project repository.*
+
+### Age Distribution
+Real EDA visualization from the dataset (`img/age_distribution.png`).
+
+![Age distribution](/portfolio/images/projects/charts/age_distribution.png)
+
+*Figure: Age distribution of the IBM HR Analytics dataset — a real exploratory visualization produced by the project pipeline (`attrition/img/`).*
+
+### ROC Curve — Random Forest
+Real evaluation chart from the project's model evaluation (`models/random_forest_metrics.json`: ROC-AUC 0.784).
+
+![ROC curve](/portfolio/images/projects/charts/roc_curve_random_forest.png)
+
+*Figure: ROC curve for the Random Forest classifier — generated from the project's stored predictions and evaluation arrays (`attrition/img/roc_curve_random_forest.png`). Reported AUC (0.784) is a verified project benchmark; it does not establish validated production performance.*
+
+### Attrition by Department
+Real group-level visualization from dataset (`attrition/img/attrition_by_department.png`).
+
+![Attrition by department](/portfolio/images/projects/charts/attrition_by_department.png)
+
+*Figure: Attrition counts by department — a real chart from the dataset analysis (`attrition/img/attrition_by_department.png`).*
+
+### Data & Chart Source Note
+- Source dataset: `../attrition/WA_Fn-UseC_-HR-Employee-Attrition.csv` (public IBM HR Analytics benchmark).
+- Generated charts: `attrition/img/*.png` produced by `2_visuals.py`, `4_model.py`, and `4b_feature_importance.py`.
+- Model artifacts: `attrition/models/` (`.joblib`, `.json`).
+- These are real analytical outputs from the actual repository; no values, distributions, or curves were invented.
+
+---
+
 ## What I'd Do Differently
 
 1. **Temporal Validation:** Current split is random. For production, use **time-based splits** (train on 2019-2021, validate on 2022) to simulate real deployment and catch temporal leakage.
