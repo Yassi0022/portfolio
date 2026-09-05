@@ -7,6 +7,7 @@
     --font-body: 'IBM Plex Sans', system-ui, sans-serif;
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    --header-height: 4.5rem;
   }
 
   * {
@@ -39,6 +40,10 @@
     line-height: 1.65;
     min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 1.5rem);
   }
 
   svg {
