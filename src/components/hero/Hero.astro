@@ -1,60 +1,79 @@
 ---
 ---
 
-<section id="hero" class="relative pt-20 lg:pt-24 pb-8 lg:pb-12 overflow-hidden" aria-label="Introduction">
+<section id="hero" class="relative pt-24 lg:pt-32 pb-12 lg:pb-16 overflow-hidden bg-page" aria-label="Introduction">
   <div class="max-w-content mx-auto px-6 lg:px-10">
     <div class="max-w-4xl">
-      <p class="label-eyebrow mb-5">DATA · SOFTWARE · BACKEND · MACHINE LEARNING</p>
-      <h1 class="section-heading mb-6 leading-[1.05]">
-        Building practical data products, backend systems, and reliable software.
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-accent-green/10 text-accent-green mb-6 border border-accent-green/20">
+        <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse" aria-hidden="true"></span>
+        SOFTWARE · BACKEND · DATA PRODUCTS · MACHINE LEARNING
+      </div>
+
+      <h1 class="section-heading mb-6 leading-[1.08] tracking-tight">
+        Yassine builds practical software, backend systems, data products, and machine learning solutions.
       </h1>
-      <p class="text-base lg:text-lg text-ink-secondary leading-relaxed mb-2 max-w-2xl">
-        Computer engineering student and freelance data analyst / software developer working with Python, Java, SQL, statistics, machine learning, APIs, backend systems, and data pipelines. I turn complex problems into clear, useful solutions.
-      </p>
-      <p class="text-base lg:text-lg text-ink-secondary leading-relaxed mb-6 max-w-2xl">
-        My work spans applied machine learning, backend and full-stack development, reproducible data engineering, and software solutions. A background in work and organizational psychology provides a complementary domain perspective for selected projects involving HR analytics, organizational data, and decision-making — without replacing the technical focus.
-      </p>
-      <p class="text-sm font-medium text-ink mb-8">Open to opportunities in data science, data analysis, Java and backend development, software engineering, and machine learning.</p>
 
-      <div class="flex flex-wrap gap-3 mb-10">
-        <a href="#projects" class="btn-primary">View case studies</a>
-        <a href="#contact" class="btn-secondary">Get in touch</a>
+      <p class="text-lg lg:text-xl text-ink-secondary leading-relaxed mb-4 max-w-3xl">
+        Computer engineering student and freelance software developer / data analyst working with Python, Java, SQL, machine learning, APIs, backend systems, and data pipelines. I build reliable systems and reproducible analyses designed to solve concrete problems.
+      </p>
+
+      <p class="text-base text-ink-secondary leading-relaxed mb-8 max-w-3xl">
+        My technical work focuses on backend engineering, scalable APIs, applied machine learning, and clean data pipelines. An academic background in work and organizational psychology provides an additional domain advantage for organizational data, HR analytics, and decision-making workflows — without shifting focus away from core engineering.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 mb-12">
+        <a href="#projects" class="btn-primary">Explore case studies</a>
+        <a href="#verified-projects" class="btn-secondary">Selected repositories</a>
+        <a href="#contact" class="text-sm font-medium text-ink hover:text-accent-green transition-colors px-2 py-2">Get in touch →</a>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" aria-label="Profile evidence">
-        <div class="bg-surface border border-border rounded-xl p-5 shadow-sm">
-          <h3 class="font-display text-sm font-bold text-ink mb-2">Data & Analytical Foundations</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">Python, SQL, statistics, exploratory analysis, data visualization, applied machine learning, model evaluation.</p>
+      <!-- Core technical pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12" aria-label="Core technical domains">
+        <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
+          <div class="w-8 h-8 rounded-lg bg-accent-green/10 flex items-center justify-center text-accent-green mb-3">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4l4 4"/></svg>
+          </div>
+          <h3 class="font-display text-base font-bold text-ink mb-2">Software & Backend Engineering</h3>
+          <p class="text-xs text-ink-secondary leading-relaxed">Java (Spring Boot), Python APIs (FastAPI), REST architecture, MySQL, Redis caching, Docker containerization, and clean OOP design.</p>
         </div>
-        <div class="bg-surface border border-border rounded-xl p-5 shadow-sm">
-          <h3 class="font-display text-sm font-bold text-ink mb-2">Software &amp; Backend Engineering</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">Java (Spring Boot), Python APIs (FastAPI), REST APIs, SQL / MySQL, backend architecture, authentication, WebSockets, Redis, Docker, data pipelines, version control, testing, deployment.</p>
+
+        <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
+          <div class="w-8 h-8 rounded-lg bg-accent-amber/10 flex items-center justify-center text-accent-amber mb-3">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display text-base font-bold text-ink mb-2">Machine Learning & MLOps</h3>
+          <p class="text-xs text-ink-secondary leading-relaxed">XGBoost, Scikit-learn, Optuna hyperparameter tuning, MLflow experiment tracking, SHAP interpretability, and automated validation gates.</p>
         </div>
-        <div class="bg-surface border border-border rounded-xl p-5 shadow-sm">
-          <h3 class="font-display text-sm font-bold text-ink mb-2">Machine Learning & Applied Domains</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">XGBoost, Optuna tuning, SHAP explainability, feature engineering, MLOps practices, HR analytics, organizational data.</p>
+
+        <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
+          <div class="w-8 h-8 rounded-lg bg-accent-sage/10 flex items-center justify-center text-accent-sage mb-3">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-display text-base font-bold text-ink mb-2">Data Products & Analytics</h3>
+          <p class="text-xs text-ink-secondary leading-relaxed">Reproducible data pipelines, SQL relational modeling, statistical data analysis, exploratory reporting, and domain-informed organizational analytics.</p>
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-8 mt-10 text-sm" aria-label="Verified metrics">
+      <!-- Verified technical highlights -->
+      <div class="pt-6 border-t border-border flex flex-wrap gap-8 text-sm" aria-label="Verified benchmarks">
         <div>
           <span class="block font-display text-2xl font-bold text-ink">0.91</span>
-          <span class="text-ink-muted">ROC-AUC — HR Attrition (public dataset benchmark)</span>
+          <span class="text-xs text-ink-muted">ROC-AUC — HR Attrition predictive benchmark</span>
         </div>
         <div>
           <span class="block font-display text-2xl font-bold text-ink">0.87</span>
-          <span class="text-ink-muted">R² — California Housing MLOps pipeline</span>
+          <span class="text-xs text-ink-muted">R² Score — California Housing MLOps pipeline</span>
         </div>
         <div>
-          <span class="block font-display text-2xl font-bold text-ink">87ms</span>
-          <span class="text-ink-muted">p95 API latency — HobbyBuddy demo</span>
+          <span class="block font-display text-2xl font-bold text-ink">Spring Boot + React</span>
+          <span class="text-xs text-ink-muted">Full-stack architecture — HobbyBuddy platform</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="hidden lg:block absolute top-24 right-16 w-64 h-64 opacity-[0.06] pointer-events-none" aria-hidden="true">
-    <svg viewBox="0 0 200 200" fill="none" stroke="#1F6B50" stroke-width="1">
+  <div class="hidden lg:block absolute top-24 right-16 w-64 h-64 opacity-[0.05] pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none" stroke="#1F6B50" stroke-width="1.5">
       <circle cx="100" cy="100" r="80" />
       <circle cx="100" cy="100" r="50" />
       <line x1="100" y1="20" x2="100" y2="180" />

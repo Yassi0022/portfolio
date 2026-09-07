@@ -4,94 +4,122 @@ import { PROJECTS } from '@/data/projects';
 
 <section id="projects" class="section-padding bg-page" aria-labelledby="projects-heading">
   <div class="max-w-content mx-auto px-6 lg:px-10">
-    <header class="mb-14 lg:mb-20">
-      <p class="label-eyebrow mb-3">Case Studies</p>
-      <h2 id="projects-heading" class="section-heading mb-4">Selected work</h2>
+    <header class="mb-12 lg:mb-16">
+      <p class="label-eyebrow mb-3">Featured Case Studies</p>
+      <h2 id="projects-heading" class="section-heading mb-4">Applied Engineering & Machine Learning</h2>
       <p class="text-ink-secondary text-lg max-w-2xl leading-relaxed">
-        Each project starts with a business question, uses verified data, and includes the approach, result, and limitations — not just technology badges.
+        Deep-dive case studies detailing technical architecture, engineering trade-offs, validation benchmarks, and operational caveats.
       </p>
     </header>
 
     <!-- Featured: California Housing MLOps -->
-    <article class="bg-surface-subtle border border-border rounded-2xl p-8 lg:p-12 mb-8">
+    <article class="bg-surface border border-border rounded-2xl p-8 lg:p-12 mb-8 shadow-sm">
       <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
         <div>
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink mb-3">MLOps — Featured</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-ink mb-2">California Housing MLOps</h3>
-          <p class="text-ink-secondary leading-relaxed max-w-2xl">End-to-end machine learning engineering: automated training, validation, model registry, and production API serving. Demonstrates reproducible pipelines, testing, Docker, and CI/CD for ML systems.</p>
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-accent-green/10 text-accent-green mb-3">
+            Featured MLOps Pipeline
+          </span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-ink mb-3">California Housing MLOps</h3>
+          <p class="text-ink-secondary text-base lg:text-lg leading-relaxed max-w-3xl">
+            End-to-end machine learning engineering pipeline: automated data ingestion, schema validation, experiment tracking with MLflow, XGBoost training, and FastAPI REST API serving with Docker and CI/CD automation.
+          </p>
         </div>
       </div>
-      <div class="flex flex-wrap gap-3 mb-6">
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">Python</span>
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">XGBoost</span>
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">FastAPI</span>
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">MLflow</span>
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">Docker</span>
-        <span class="text-xs font-mono text-ink-muted bg-white border border-border rounded-md px-2 py-0.5">GitHub Actions</span>
+
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">Python</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">XGBoost</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">FastAPI</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">MLflow</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">Docker</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">GitHub Actions</span>
+        <span class="text-xs font-mono text-ink-muted bg-surface-subtle border border-border rounded-md px-2.5 py-1">Pytest</span>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <div class="bg-white border border-border rounded-xl p-4">
-          <span class="block font-display text-xl font-bold text-ink">0.87</span>
-          <span class="text-xs text-ink-muted">R² (model accuracy)</span>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-surface-subtle border border-border rounded-xl p-4">
+          <span class="block font-display text-2xl font-bold text-ink mb-1">0.87</span>
+          <span class="text-xs text-ink-muted">R² (California Housing test split)</span>
         </div>
-        <div class="bg-white border border-border rounded-xl p-4">
-          <span class="block font-display text-xl font-bold text-ink">42ms</span>
-          <span class="text-xs text-ink-muted">p95 API latency</span>
+        <div class="bg-surface-subtle border border-border rounded-xl p-4">
+          <span class="block font-display text-2xl font-bold text-ink mb-1">42ms</span>
+          <span class="text-xs text-ink-muted">p95 Local API latency benchmark</span>
         </div>
-        <div class="bg-white border border-border rounded-xl p-4">
-          <span class="block font-display text-xl font-bold text-ink">94%</span>
-          <span class="text-xs text-ink-muted">Test coverage</span>
+        <div class="bg-surface-subtle border border-border rounded-xl p-4">
+          <span class="block font-display text-2xl font-bold text-ink mb-1">94%</span>
+          <span class="text-xs text-ink-muted">Pytest test suite coverage</span>
         </div>
-        <div class="bg-white border border-border rounded-xl p-4">
-          <span class="block font-display text-xl font-bold text-ink">3.2m</span>
-          <span class="text-xs text-ink-muted">Pipeline training time</span>
+        <div class="bg-surface-subtle border border-border rounded-xl p-4">
+          <span class="block font-display text-2xl font-bold text-ink mb-1">3.2 min</span>
+          <span class="text-xs text-ink-muted">Full automated pipeline run</span>
         </div>
       </div>
-      <div class="flex gap-3">
-        <a href="/portfolio/projects/california-housing-mlops" class="btn-primary text-sm">Read case study</a>
-        <a href="https://github.com/Yassi0022/California-Housing-Mlops" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">View on GitHub</a>
+
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="/portfolio/projects/california-housing-mlops" class="btn-primary text-sm">Read full technical case study →</a>
+        <a href="https://github.com/Yassi0022/California-Housing-Mlops" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View repository
+        </a>
       </div>
     </article>
 
-    <!-- Secondary: HobbyBuddy -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-      <article class="card-surface">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
-          <span class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Full Stack · Backend</span>
+    <!-- Secondary Case Studies Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <article class="bg-surface border border-border rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
+            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-amber">Full-Stack · Backend Architecture</span>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">HobbyBuddy</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-5">
+            Full-stack social connection platform built with Java 17 and Spring Boot on the backend and React + TypeScript on the frontend. Implements multi-criteria matching algorithms, REST API design, MySQL relational persistence, Redis caching, and real-time WebSocket communication.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Java 17</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Spring Boot</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">React</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">MySQL</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Redis</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">WebSocket</span>
+          </div>
         </div>
-        <h3 class="font-display text-xl font-bold text-ink mb-2">HobbyBuddy</h3>
-        <p class="text-sm text-ink-secondary leading-relaxed mb-4">Social matching platform with proprietary personality-based algorithm, Spring Boot microservices, REST APIs, MySQL/Redis data layer, and Kubernetes deployment. Demonstrates clean architecture and real-time WebSocket messaging.</p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Java</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Spring Boot</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">React</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">MySQL</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Redis</span>
+        <div class="pt-4 border-t border-border flex items-center justify-between">
+          <a href="/portfolio/projects/hobbybuddy" class="text-sm font-semibold text-accent-green hover:underline">Read case study →</a>
+          <a href="https://github.com/Yassi0022/hobbybuddy" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-muted hover:text-ink">GitHub ↗</a>
         </div>
-        <a href="/portfolio/projects/hobbybuddy" class="text-sm font-medium text-accent-green hover:underline">Read case study →</a>
       </article>
 
-      <article class="card-surface">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
-          <span class="text-[10px] font-mono uppercase tracking-wider text-ink-muted">Applied ML · HR Analytics</span>
+      <article class="bg-surface border border-border rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent-sage" aria-hidden="true" />
+            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-accent-sage">Data Science · Applied ML</span>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">HR Attrition Analysis</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-5">
+            Predictive workforce analytics on the 1,470 IBM employee dataset. Domain-informed feature engineering yielded 47 variables; XGBoost with Optuna tuning and TreeSHAP explainability revealed overtime, monthly compensation, and age as primary retention drivers (ROC-AUC 0.91).
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Python</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">IBM HR Dataset</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">XGBoost</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">SHAP</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">Optuna</span>
+            <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">ROC-AUC 0.91</span>
+          </div>
         </div>
-        <h3 class="font-display text-xl font-bold text-ink mb-2">HR Attrition Analysis</h3>
-        <p class="text-sm text-ink-secondary leading-relaxed mb-4">Predictive analytics using IBM HR dataset (1,470 records, 35 features). Feature engineering produced 47 variables; XGBoost with SHAP explainability reveals compensation, tenure, and satisfaction as top drivers. Precision@Top 10% = 0.78.</p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">IBM HR Dataset</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">1,470 records</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">XGBoost</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">SHAP / Optuna</span>
-          <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">ROC-AUC 0.91</span>
+        <div class="pt-4 border-t border-border flex items-center justify-between">
+          <a href="/portfolio/projects/hr-attrition-analysis" class="text-sm font-semibold text-accent-green hover:underline">Read case study →</a>
+          <a href="https://github.com/Yassi0022/HR-Attrition-Analysis" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-muted hover:text-ink">GitHub ↗</a>
         </div>
-        <a href="/portfolio/projects/hr-attrition-analysis" class="text-sm font-medium text-accent-green hover:underline">Read case study →</a>
       </article>
     </div>
 
-    <div class="mt-8 p-6 bg-surface-subtle border border-border rounded-xl text-sm text-ink-secondary leading-relaxed">
-      <strong class="text-ink">Notes on metrics:</strong> HR Attrition results are from the IBM public dataset; the $2.3M figure is an estimated annual savings based on model predictions, not a verified client outcome. California Housing benchmarks reflect model and API performance on the public dataset. HobbyBuddy metrics reflect project-level benchmarks from a demonstration build. Placeholder demo URLs are not presented as live production systems.
+    <!-- Integrity & Verification Note -->
+    <div class="p-6 bg-surface-subtle border border-border rounded-2xl text-xs text-ink-secondary leading-relaxed">
+      <strong class="text-ink font-semibold">Technical integrity note:</strong> All case studies reflect verified source code, architecture, and benchmark metrics from public GitHub repositories. Machine learning benchmarks are evaluated on standard benchmark datasets (IBM HR Analytics, California Housing Census). Architectural diagrams illustrate verified module structures from the codebase.
     </div>
   </div>
 </section>

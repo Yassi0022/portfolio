@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Yassine Hatouf',
-  title: 'Data Scientist · Software Engineer · ML',
-  description: 'Computer engineering student building data products, machine learning systems, backend APIs, and practical software with Python, Java, SQL, and reproducible engineering workflows.',
+  title: 'Software Developer · Backend & Data Science',
+  description: 'Computer engineering student and freelance software developer / data analyst building practical data products, backend systems, APIs, machine learning pipelines, and reliable software with Python, Java, and SQL.',
   url: 'https://yassi0022.github.io/portfolio',
   github: 'https://github.com/Yassi0022',
   linkedin: 'https://www.linkedin.com/in/yassine-hatouf',
@@ -12,6 +12,7 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS = [
   { label: 'About', href: '/portfolio/#profile' },
   { label: 'Case Studies', href: '/portfolio/#projects' },
+  { label: 'Repositories', href: '/portfolio/#verified-projects' },
   { label: 'Skills', href: '/portfolio/#skills' },
   { label: 'Contact', href: '/portfolio/#contact' },
 ];

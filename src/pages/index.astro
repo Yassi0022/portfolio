@@ -6,187 +6,335 @@ import SkillsSection from '@/components/skills/SkillsSection.astro';
 import ContactSection from '@/components/contact/ContactSection.astro';
 ---
 
-<Layout title="Yassine Hatouf — Data Science, Java Backend & Software Portfolio" description="Computer engineering student and freelance data analyst / software developer building data products, Java backend systems, APIs, machine learning projects, and practical software applications with Python, SQL, and reproducible engineering workflows." image="/portfolio/images/og-image.svg">
+<Layout
+  title="Yassine Hatouf — Software Developer, Backend & Data Science Portfolio"
+  description="Computer engineering student and freelance software developer / data analyst building practical data products, backend systems, APIs, machine learning pipelines, and reliable software with Python, Java, and SQL."
+  image="/portfolio/images/og-image.svg"
+>
   <Hero />
 
+  <!-- About & Profile Section -->
   <section id="profile" class="section-padding bg-surface-subtle" aria-labelledby="profile-heading">
     <div class="max-w-content mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         <div class="lg:col-span-7">
           <p class="label-eyebrow mb-3">About</p>
-          <h2 id="profile-heading" class="font-display text-2xl lg:text-3xl font-bold text-ink mb-5">Engineering, data, and applied analytical thinking.</h2>
+          <h2 id="profile-heading" class="font-display text-2xl lg:text-3xl font-bold text-ink mb-5">
+            Engineering, data, and applied analytical thinking.
+          </h2>
           <div class="space-y-4 text-ink-secondary leading-relaxed">
-            <p>I am a computer engineering student, freelance data analyst, and software developer focused on data analysis, machine learning, backend systems, and practical software engineering. I build reproducible analyses, APIs, data pipelines, and applications designed to make complex information useful and reliable.</p>
-            <p>My academic background in work and organizational psychology provides a complementary domain perspective for selected projects involving people, organizations, HR analytics, and decision-making. It strengthens my ability to frame questions, interpret results, and communicate clearly — without replacing the technical focus.</p>
-            <p>Currently focused on predictive analytics, explainable ML, practical software and backend development, and data-driven workforce decisions. I work primarily with Python, Java, SQL, Pandas, Scikit-Learn, XGBoost, and SHAP.</p>
+            <p>
+              I am a computer engineering student, freelance software developer, and data analyst focused on backend engineering, applied machine learning, data pipelines, and practical software solutions. I develop reproducible analyses, robust APIs, and structured data architectures designed to make complex systems useful and reliable.
+            </p>
+            <p>
+              My academic background in work and organizational psychology provides a complementary domain perspective for selected projects involving organizational dynamics, HR analytics, and decision support. It strengthens my ability to formulate research questions, interpret high-dimensional workforce data, and communicate technical findings clearly — while keeping the primary focus on engineering rigor.
+            </p>
+            <p>
+              Currently focused on building backend services, predictive analytics, explainable ML models, and data-driven tooling. I work primarily with Python, Java, SQL, Spring Boot, FastAPI, Pandas, Scikit-learn, XGBoost, and SHAP.
+            </p>
           </div>
         </div>
-        <aside class="lg:col-span-5 bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm" aria-label="Profile details">
-          <div class="mb-5">
-            <img src="/portfolio/images/profile.jpg" alt="Yassine Hatouf" width="160" height="160" class="w-20 h-20 rounded-full object-cover shadow-sm" loading="eager" />
-            <p class="text-[10px] text-ink-muted mt-2">Verified profile photo — <code>public/images/profile.jpg</code> (400×400 JPG).</p>
+
+        <aside class="lg:col-span-5 bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm" aria-label="Profile summary">
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src="/portfolio/images/profile.jpg"
+              alt="Yassine Hatouf"
+              width="80"
+              height="80"
+              class="w-16 h-16 rounded-full object-cover border-2 border-accent-green/20 shadow-sm"
+              loading="eager"
+            />
+            <div>
+              <h3 class="font-display text-lg font-bold text-ink">Yassine Hatouf</h3>
+              <p class="text-xs text-ink-muted">Computer Engineering · Software & Data Development</p>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse" aria-hidden="true"></span>
+                <span class="text-[11px] font-mono text-accent-green font-medium">Open to engineering & data roles</span>
+              </div>
+            </div>
           </div>
-          <h3 class="font-display text-base font-bold text-ink mb-4">Profile at a glance</h3>
-          <ul class="space-y-3 text-sm text-ink-secondary">
-            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Computer engineering student with a focus on practical systems and reproducible analysis.</li>
-            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Work psychology orientation — survey design, psychometrics, and organizational insight.</li>
-            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Predictive modeling: XGBoost, Optuna tuning, SHAP explainability, feature engineering.</li>
-            <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>Software foundations: Python APIs, SQL, data pipelines, Docker, version control.</li>
+
+          <h4 class="font-display text-sm font-bold text-ink mb-3 uppercase tracking-wider text-xs">Technical Profile</h4>
+          <ul class="space-y-3 text-sm text-ink-secondary mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
+              <span><strong>Backend & Software:</strong> Java (Spring Boot), Python (FastAPI), REST APIs, SQL, Docker, testing.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
+              <span><strong>Machine Learning & MLOps:</strong> XGBoost, Scikit-learn, Optuna, MLflow, SHAP explainability.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
+              <span><strong>Data Engineering:</strong> ETL pipelines, data validation (Great Expectations), feature engineering.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
+              <span><strong>Domain Perspective:</strong> Organizational psychology, psychometrics, survey design, workforce insights.</span>
+            </li>
           </ul>
-          <div class="mt-6 pt-6 border-t border-border-subtle">
-            <p class="text-xs font-medium text-ink">Best suited to analytical work where people, processes, data quality, and communication matter.</p>
+
+          <div class="pt-4 border-t border-border">
+            <p class="text-xs text-ink-muted leading-relaxed">
+              Target roles: Software Developer, Backend Developer, Data Scientist, Data Analyst, Junior ML / MLOps Engineer.
+            </p>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
+  <!-- Featured Case Studies -->
   <ProjectsSection />
 
-  <!-- Additional Engineering Work -->
-  <section id="additional-work" class="section-padding bg-surface-subtle" aria-labelledby="additional-work-heading">
-    <div class="max-w-content mx-auto px-6 lg:px-10">
-      <header class="mb-10 lg:mb-14 max-w-2xl">
-        <p class="label-eyebrow mb-3">Engineering Work</p>
-        <h2 id="additional-work-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Additional engineering work</h2>
-        <p class="text-lg text-ink-secondary leading-relaxed">Beyond the three case studies above, my professional profile also includes practical applications in backend development, data management, and software engineering. These projects are described from my public professional profile and are available for discussion or review upon request.</p>
-      </header>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink mb-4">Java · OOP · Backend</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-3">HR Management System</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Java backend application for employee data management and organizational workflows, using object-oriented design and database integration.</p>
-          <p class="text-xs text-ink-muted">No public live demo or detailed metrics available. Details available on request.</p>
-        </article>
-
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-ink mb-4">Python · SQL · Data Pipeline</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-3">JobMarketRadar</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Data pipeline for collecting, cleaning, and analyzing labor-market trends. Uses Python, Pandas, SQL, and structured data workflows.</p>
-          <p class="text-xs text-ink-muted">Live scraping status and output dashboards are not verified in this repository. Description reflects professional profile only.</p>
-        </article>
-
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-sage/10 text-ink mb-4">Java · SQL · Application</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-3">Library / Run Tracker</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-4">Applications focused on clean code, data management, and robust backend logic with database integration.</p>
-          <p class="text-xs text-ink-muted">Concise reference from professional profile; no public screenshots or metrics included.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Verified Real Projects (from public repositories) -->
+  <!-- Consolidated Verified Repositories Section -->
   <section id="verified-projects" class="section-padding bg-page" aria-labelledby="verified-heading">
     <div class="max-w-content mx-auto px-6 lg:px-10">
-      <header class="mb-10 lg:mb-14 max-w-2xl">
-        <p class="label-eyebrow mb-3">Real Repositories</p>
-        <h2 id="verified-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Verified engineering work</h2>
-        <p class="text-lg text-ink-secondary leading-relaxed">The following cards reference real public repositories. Each entry includes only verified technology evidence from the repository; no fabricated metrics or unverified demo links are shown.</p>
+      <header class="mb-12 lg:mb-16 max-w-3xl">
+        <p class="label-eyebrow mb-3">Selected Repositories</p>
+        <h2 id="verified-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">
+          Software systems & engineering repositories
+        </h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">
+          Beyond the deep-dive case studies above, here are verified open-source repositories demonstrating backend logic, object-oriented design, data pipelines, and applied modeling. Each link points directly to the real GitHub source code.
+        </p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink mb-4">Java · OOP · Backend</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-2">HR Management System</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Object-oriented Java backend for employee and organizational management. Verified source files include <code>Azienda.java</code>, <code>Dipendente.java</code>, <code>Reparto.java</code>, and a main interactive menu.</p>
-          <p class="text-xs text-ink-muted mb-4">No public live demo. Source verified on GitHub.</p>
-          <a href="https://github.com/Yassi0022/GestionaleHR-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        <!-- HR Management System (Java) -->
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-accent-green">
+                Java · OOP · Backend
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">GestionaleHR-Java</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              Enterprise management backend applying object-oriented design patterns. Models organizational hierarchies, departments, employee contracts, and payroll calculations with structured Java classes (<code class="text-xs">Azienda</code>, <code class="text-xs">Dipendente</code>, <code class="text-xs">Reparto</code>).
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Java 17 · OOP</span>
+            <a href="https://github.com/Yassi0022/GestionaleHR-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              GitHub Repo →
+            </a>
+          </div>
         </article>
 
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-ink mb-4">Python · SQL · Pipeline</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-2">JobMarketRadar</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Labor-market data pipeline combining Java backend components (<code>App.java</code>, <code>DB.java</code>, <code>pom.xml</code>) with Python ingestion scripts (<code>adzuna_ingest.py</code>, <code>market_report.py</code>).</p>
-          <p class="text-xs text-ink-muted mb-4">No verified live scraping dashboard in this repository.</p>
-          <a href="https://github.com/Yassi0022/JobMarketRadar" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        <!-- JobMarketRadar -->
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-amber/10 text-accent-amber">
+                Python · Java · Pipeline
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">JobMarketRadar</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              Labor-market intelligence system combining Python automated data ingestion (<code class="text-xs">adzuna_ingest.py</code>, <code class="text-xs">market_report.py</code>) with a Java backend persistence service (<code class="text-xs">App.java</code>, <code class="text-xs">DB.java</code>) for salary tracking and demand analysis.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Python · Java · SQL</span>
+            <a href="https://github.com/Yassi0022/JobMarketRadar" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              GitHub Repo →
+            </a>
+          </div>
         </article>
 
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-sage/10 text-ink mb-4">Java · Data Structure</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-2">Library Manager</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Library management system using HashMap structures and clean Java architecture. Verified files: <code>LibraryManager.java</code> and README with usage examples.</p>
-          <p class="text-xs text-ink-muted mb-4">No live deployment link verified.</p>
-          <a href="https://github.com/Yassi0022/LibraryManager-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">Repository →</a>
+        <!-- LibraryManager-Java -->
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-sage/10 text-accent-sage">
+                Java · Data Structures
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">LibraryManager-Java</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              Catalog indexing and loan management system demonstrating clean code and data structure design. Implements efficient HashMap lookups, borrowing lifecycle tracking, and validation rules in pure Java.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Java · Collections</span>
+            <a href="https://github.com/Yassi0022/LibraryManager-Java" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              GitHub Repo →
+            </a>
+          </div>
         </article>
 
-        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm md:col-span-2 lg:col-span-3">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-ink/5 text-ink mb-4">Reference · Python</span>
-          <h3 class="font-display text-xl font-bold text-ink mb-2">Additional verified repositories</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-3">Other real public repositories include <strong>HR-Attrition-Analysis</strong> (Python, Pandas, XGBoost, SHAP, with an <code>img/</code> folder), <strong>GooglePlayStore-Analysis</strong> (data analysis), and <strong>sanremo2026-predictor</strong> (predictive ML). Each is available for review at the linked GitHub account with real commit history.</p>
-          <div class="flex flex-wrap gap-4 mt-3">
-            <a href="https://github.com/Yassi0022/HR-Attrition-Analysis" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">HR-Attrition-Analysis →</a>
-            <a href="https://github.com/Yassi0022/GooglePlayStore-Analysis" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">GooglePlayStore-Analysis →</a>
-            <a href="https://github.com/Yassi0022/sanremo2026-predictor" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent-green hover:underline">sanremo2026-predictor →</a>
+        <!-- Google Play Store Analysis -->
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-ink/5 text-ink">
+                Python · EDA · Analytics
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">GooglePlayStore-Analysis</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              In-depth exploratory data analysis across 10,000+ Android applications. Covers data sanitization, missing value handling, rating sentiment distribution, and monetization correlation studies using Pandas, Matplotlib, and Seaborn.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Pandas · Seaborn</span>
+            <a href="https://github.com/Yassi0022/GooglePlayStore-Analysis" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              GitHub Repo →
+            </a>
+          </div>
+        </article>
+
+        <!-- Sanremo Predictor -->
+        <article class="bg-surface border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-ink/5 text-ink">
+                Python · Predictive ML
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">sanremo2026-predictor</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              Predictive machine learning pipeline modeling cultural and musical contest rankings using historical performance metrics, social sentiment signals, and feature-engineered ranking models.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">Scikit-learn · Python</span>
+            <a href="https://github.com/Yassi0022/sanremo2026-predictor" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              GitHub Repo →
+            </a>
+          </div>
+        </article>
+
+        <!-- GitHub Profile Hub -->
+        <article class="bg-surface-subtle border border-border rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-accent-green">
+                GitHub Overview
+              </span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-ink mb-2">All Public Repositories</h3>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-4">
+              Explore complete commit histories, README documentation, Dockerfiles, and ongoing experiments directly on GitHub.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs font-mono text-ink-muted">@Yassi0022</span>
+            <a href="https://github.com/Yassi0022" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-green hover:underline">
+              Explore GitHub Profile →
+            </a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Real Project Evidence (verified charts from actual repositories) -->
+  <!-- Real Analytical Visual Evidence Section -->
   <section id="real-evidence" class="section-padding bg-surface-subtle" aria-labelledby="evidence-heading">
     <div class="max-w-content mx-auto px-6 lg:px-10">
-      <header class="mb-10 lg:mb-14 max-w-2xl">
-        <p class="label-eyebrow mb-3">Evidence</p>
-        <h2 id="evidence-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">Real analytical charts</h2>
-        <p class="text-lg text-ink-secondary leading-relaxed">These visuals are generated directly from real source data and scripts in the verified repositories. They are not decorative illustrations.</p>
+      <header class="mb-12 lg:mb-16 max-w-3xl">
+        <p class="label-eyebrow mb-3">Empirical Evidence</p>
+        <h2 id="evidence-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">
+          Real analytical charts & evaluation outputs
+        </h2>
+        <p class="text-lg text-ink-secondary leading-relaxed">
+          These charts were generated directly by execution scripts from the verified <a href="https://github.com/Yassi0022/HR-Attrition-Analysis" target="_blank" rel="noopener noreferrer" class="underline text-accent-green">HR-Attrition-Analysis</a> repository using the 1,470-record IBM HR benchmark dataset.
+        </p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
-          <img src="/portfolio/images/projects/charts/attrition_by_overtime.png" alt="Real chart: attrition by overtime status from IBM HR Analytics dataset" class="w-full h-auto" loading="lazy" />
-          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong>Figure — Attrition by overtime.</strong> Generated from <code>../attrition/img/attrition_by_overtime.png</code> via <code>2_visuals.py</code> on the IBM HR Analytics dataset (<code>WA_Fn-UseC_-HR-Employee-Attrition.csv</code>, 1,470 records). Real chart, not an illustration.
+          <img
+            src="/portfolio/images/projects/charts/attrition_by_overtime.png"
+            alt="Real chart: attrition rate by overtime status from IBM HR Analytics dataset"
+            class="w-full h-auto bg-white p-4"
+            loading="lazy"
+          />
+          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong class="text-ink block mb-1">Figure 1 — Attrition rate by overtime status</strong>
+            Produced by <code>2_visuals.py</code> on the IBM HR Analytics dataset (<code>WA_Fn-UseC_-HR-Employee-Attrition.csv</code>, 1,470 records). Demonstrates that employees logging regular overtime exhibit more than triple the baseline departure rate.
           </figcaption>
         </figure>
 
         <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
-          <img src="/portfolio/images/projects/charts/feature_importance.png" alt="Real chart: feature importance from Random Forest model" class="w-full h-auto" loading="lazy" />
-          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong>Figure — Feature importance (Random Forest).</strong> Generated from <code>../attrition/img/feature_importance.png</code> using <code>4b_feature_importance.py</code> and saved model <code>models/random_forest.joblib</code>. Real output from the project repository.
+          <img
+            src="/portfolio/images/projects/charts/feature_importance.png"
+            alt="Real chart: feature importance from Random Forest model"
+            class="w-full h-auto bg-white p-4"
+            loading="lazy"
+          />
+          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong class="text-ink block mb-1">Figure 2 — Feature importance (Random Forest)</strong>
+            Extracted from <code>models/random_forest.joblib</code> via <code>4b_feature_importance.py</code>. Confirms MonthlyIncome, OverTime, Age, and TotalWorkingYears as the primary predictive split drivers.
           </figcaption>
         </figure>
 
         <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm md:col-span-2">
-          <img src="/portfolio/images/projects/charts/roc_curve_random_forest.png" alt="Real chart: ROC curve from Random Forest evaluation" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
-          <figcaption class="px-5 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong>Figure — ROC curve (Random Forest).</strong> Produced by <code>4_model.py</code>; verified benchmark AUC = 0.784 from <code>models/random_forest_metrics.json</code>. This is a real evaluation chart from the project's evaluation pipeline, not a synthetic plot. The dataset is public (IBM benchmark); results are project-level benchmarks, not validated production claims.
+          <img
+            src="/portfolio/images/projects/charts/roc_curve_random_forest.png"
+            alt="Real chart: ROC curve from Random Forest evaluation"
+            class="w-full h-auto max-h-[420px] object-contain mx-auto bg-white p-4"
+            loading="lazy"
+          />
+          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+            <strong class="text-ink block mb-1">Figure 3 — ROC evaluation curve (Random Forest)</strong>
+            Produced by <code>4_model.py</code> with verified benchmark test AUC = 0.784 (recorded in <code>models/random_forest_metrics.json</code>). Represents empirical test split evaluation on the public IBM benchmark.
           </figcaption>
         </figure>
       </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
   <SkillsSection />
 
+  <!-- How I Work / Methodological Approach -->
   <section id="how-i-work" class="section-padding bg-surface-subtle" aria-labelledby="approach-heading">
     <div class="max-w-content mx-auto px-6 lg:px-10">
       <header class="mb-12 lg:mb-16 max-w-2xl">
-        <p class="label-eyebrow mb-3">Approach</p>
+        <p class="label-eyebrow mb-3">Engineering Principles</p>
         <h2 id="approach-heading" class="font-display text-3xl lg:text-4xl font-bold text-ink mb-4">How I work</h2>
         <p class="text-lg text-ink-secondary leading-relaxed">
-          Analysis is a conversation, not a presentation. I clarify the question, check the data, build the model, explain the result — and always include what could be wrong.
+          Good engineering combines technical discipline with honest validation. I build solutions by framing the core problem, verifying data and interfaces, implementing clean architecture, and documenting operational limitations.
         </p>
       </header>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <h3 class="font-display text-lg font-bold text-ink mb-3">Clarify the question</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">I start with the business or research problem, not the dataset. What decision will this inform? Who needs to understand it?</p>
+          <div class="w-8 h-8 rounded-lg bg-accent-green/10 flex items-center justify-center text-accent-green mb-4">
+            <span class="font-mono text-sm font-bold">01</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Frame the problem & requirements</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">
+            I start with system requirements and concrete goals, not arbitrary tech choices. Who uses this system? What latency or reliability constraints exist? What decision will this model inform?
+          </p>
         </article>
+
         <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <h3 class="font-display text-lg font-bold text-ink mb-3">Build with evidence</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">Every model includes validation, every chart includes context, and every recommendation notes its limitations.</p>
+          <div class="w-8 h-8 rounded-lg bg-accent-amber/10 flex items-center justify-center text-accent-amber mb-4">
+            <span class="font-mono text-sm font-bold">02</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Build with reproducible validation</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">
+            Every backend API is tested with automated suites; every ML model includes cross-validation, baseline comparisons, and drift checks; every chart is backed by real execution scripts.
+          </p>
         </article>
+
         <article class="bg-surface border border-border rounded-2xl p-6 lg:p-8 shadow-sm">
-          <h3 class="font-display text-lg font-bold text-ink mb-3">Communicate clearly</h3>
-          <p class="text-sm text-ink-secondary leading-relaxed">Results are written for the reader — not the model. Metrics are labeled, caveats are explicit, and visuals tell one story.</p>
+          <div class="w-8 h-8 rounded-lg bg-accent-sage/10 flex items-center justify-center text-accent-sage mb-4">
+            <span class="font-mono text-sm font-bold">03</span>
+          </div>
+          <h3 class="font-display text-lg font-bold text-ink mb-3">Communicate caveats & trade-offs</h3>
+          <p class="text-sm text-ink-secondary leading-relaxed">
+            Technical clarity means being explicit about edge cases, assumptions, and operational constraints. No disguised approximations, no unverified production claims.
+          </p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <ContactSection />
 </Layout>

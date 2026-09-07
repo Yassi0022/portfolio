@@ -1,5 +1,5 @@
 ---
-import { PROJECTS, getProjectBySlug } from '@/data/projects';
+import { PROJECTS } from '@/data/projects';
 import Layout from '@/components/layout/Layout.astro';
 
 export async function getStaticPaths() {
@@ -14,62 +14,137 @@ const { project } = Astro.props;
 
 <Layout title={`${project.title} | Yassine Hatouf`} description={project.shortDescription} image="/portfolio/images/og-image.svg">
   <main class="min-h-screen">
-    <header class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-page">
+    <header class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-page border-b border-border/40">
       <div class="max-w-content mx-auto px-6 lg:px-10">
-        <a href="/portfolio/#projects" class="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-ink mb-6 transition-colors">← Back to case studies</a>
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wide bg-accent-green/10 text-ink">Case Study</span>
-          <span class="text-xs text-ink-muted">{project.stack.slice(0, 4).join(' · ')}</span>
+        <a href="/portfolio/#projects" class="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-accent-green mb-6 transition-colors font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to selected work
+        </a>
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="inline-block px-3 py-0.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-accent-green/10 text-accent-green">
+            Technical Case Study
+          </span>
+          <span class="text-xs font-mono text-ink-muted">{project.stack.slice(0, 5).join(' · ')}</span>
         </div>
         <h1 class="font-display text-3xl lg:text-5xl font-bold text-ink tracking-tight mb-6">{project.title}</h1>
         <p class="text-lg lg:text-xl text-ink-secondary leading-relaxed max-w-3xl">{project.longDescription}</p>
       </div>
     </header>
 
-    <div class="max-w-content mx-auto px-6 lg:px-10 pb-20">
+    <div class="max-w-content mx-auto px-6 lg:px-10 py-16">
       <!-- Illustrative visual summary -->
-      <section class="mb-16" aria-label="Illustrative project summary">
+      <section class="mb-16" aria-label="Project architecture visual">
         <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
           <img
             src={project.thumbnail ? `/portfolio${project.thumbnail}` : `/portfolio/images/projects/${project.slug}.svg`}
-            alt={`Illustrative analytical summary for ${project.title} — project architecture and key metrics visualization`}
+            alt={`Illustrative technical overview for ${project.title} — architecture and pipeline layout`}
             loading="lazy"
-            class="w-full h-auto max-h-[420px] object-cover"
+            class="w-full h-auto max-h-[440px] object-cover"
           />
           <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            Illustrative analytical summary for {project.title}. This visual represents verified project structure, metrics, and architecture from the repository. It is not a screenshot of a live production system or client environment.
+            <strong>Figure — Architecture & pipeline overview for {project.title}.</strong> Visual synthesis of the system components and data pipeline as verified in the repository. Illustrative diagram based on repository implementation; not a live production client capture.
           </figcaption>
         </figure>
       </section>
 
-      <!-- Metrics -->
+      <!-- Key Metrics -->
       {project.keyMetrics && project.keyMetrics.length > 0 && (
         <section class="mb-16" aria-label="Key metrics">
-          <h2 class="font-display text-2xl font-bold text-ink mb-6">Key Metrics</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-green" aria-hidden="true" />
+            <h2 class="font-display text-2xl font-bold text-ink">Verified Benchmarks & Metrics</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {project.keyMetrics.map(metric => (
-              <div class="bg-surface border border-border rounded-xl p-5">
-                <div class="font-display text-2xl font-bold text-ink mb-1">{metric.value}</div>
-                <div class="text-sm font-medium text-ink">{metric.label}</div>
-                <div class="text-xs text-ink-muted mt-1">{metric.description}</div>
+              <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
+                <div class="font-display text-3xl font-bold text-ink mb-1">{metric.value}</div>
+                <div class="text-sm font-semibold text-ink mb-1">{metric.label}</div>
+                <div class="text-xs text-ink-muted leading-relaxed">{metric.description}</div>
               </div>
             ))}
           </div>
         </section>
       )}
 
-      <!-- Approach -->
+      <!-- Architecture Pipeline -->
+      {project.architectureSteps && project.architectureSteps.length > 0 && (
+        <section class="mb-16" aria-label="System architecture pipeline">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
+            <h2 class="font-display text-2xl font-bold text-ink">System Architecture & Pipeline Flow</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {project.architectureSteps.map((stage) => (
+              <article class="bg-surface border border-border rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="font-mono text-xs font-bold text-accent-green bg-accent-green/10 px-2.5 py-1 rounded-full">
+                      STAGE {stage.step}
+                    </span>
+                    {stage.badge && (
+                      <span class="text-[11px] font-mono text-ink-muted">
+                        {stage.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h3 class="font-display text-lg font-bold text-ink mb-2">{stage.title}</h3>
+                  <p class="text-sm text-ink-secondary leading-relaxed">{stage.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p class="text-xs text-ink-muted mt-4">
+            * Component architecture reflects verified project modules and execution stages from the source repository.
+          </p>
+        </section>
+      )}
+
+      <!-- Real charts evidence (if available for project) -->
+      {project.charts && project.charts.length > 0 && (
+        <section class="mb-16" aria-label="Verified analytical charts">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-sage" aria-hidden="true" />
+            <h2 class="font-display text-2xl font-bold text-ink">Verified Analytical Charts & Evidence</h2>
+          </div>
+          <p class="text-sm text-ink-secondary leading-relaxed mb-6">
+            The following visual evidence was generated directly from the repository's evaluation scripts and real dataset benchmarks.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {project.charts.map(chart => (
+              <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
+                <img src={`/portfolio${chart.image}`} alt={chart.title} class="w-full h-auto object-contain max-h-[360px] bg-white p-4" loading="lazy" />
+                <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
+                  <strong class="text-ink block mb-1">{chart.title}</strong>
+                  {chart.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Analytical Approach Stages -->
       {project.pipelines && project.pipelines.length > 0 && (
-        <section class="mb-16" aria-label="Approach">
-          <h2 class="font-display text-2xl font-bold text-ink mb-6">Analytical Approach</h2>
+        <section class="mb-16" aria-label="Implementation approach">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-green" aria-hidden="true" />
+            <h2 class="font-display text-2xl font-bold text-ink">Engineering Implementation</h2>
+          </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {project.pipelines.map(stage => (
-              <div class="bg-surface-subtle border border-border rounded-xl p-6">
-                <h3 class="font-display text-lg font-bold text-ink mb-2">{stage.name}</h3>
+              <div class="bg-surface-subtle border border-border rounded-2xl p-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="w-6 h-6 rounded-full bg-white border border-border text-xs font-mono font-bold flex items-center justify-center text-ink">
+                    {stage.order}
+                  </span>
+                  <h3 class="font-display text-lg font-bold text-ink">{stage.name}</h3>
+                </div>
                 <p class="text-sm text-ink-secondary leading-relaxed mb-4">{stage.description}</p>
                 <div class="flex flex-wrap gap-2">
                   {stage.technologies.map(t => (
-                    <span class="text-[11px] font-mono text-ink-muted bg-white border border-border rounded px-2 py-0.5">{t}</span>
+                    <span class="text-[11px] font-mono text-ink-muted bg-white border border-border rounded-md px-2.5 py-0.5">{t}</span>
                   ))}
                 </div>
               </div>
@@ -78,34 +153,35 @@ const { project } = Astro.props;
         </section>
       )}
 
-      <!-- Architecture -->
-      {project.architectureDiagram && (
-        <section class="mb-16" aria-label="Architecture">
-          <h2 class="font-display text-2xl font-bold text-ink mb-6">Architecture</h2>
-          <div class="bg-surface-subtle border border-border rounded-xl p-6 overflow-x-auto">
-            <pre class="font-mono text-sm text-ink-secondary whitespace-pre-wrap">{project.architectureDiagram}</pre>
+      <!-- Limitations & Caveats -->
+      {project.limitations && project.limitations.length > 0 && (
+        <section class="mb-16 bg-amber-50/60 border border-amber-200/50 rounded-2xl p-6 lg:p-8" aria-label="Limitations and caveats">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-2 h-2 rounded-full bg-accent-amber" aria-hidden="true" />
+            <h2 class="font-display text-xl font-bold text-ink">Limitations & Technical Caveats</h2>
           </div>
+          <ul class="space-y-2.5 text-sm text-ink-secondary leading-relaxed">
+            {project.limitations.map(item => (
+              <li class="flex items-start gap-3">
+                <span class="text-accent-amber font-mono font-bold text-xs mt-0.5">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
-      <!-- Caveats -->
-      <section class="mb-16 bg-amber-50/60 border border-amber-200/40 rounded-xl p-6" aria-label="Limitations">
-        <h2 class="font-display text-xl font-bold text-ink mb-3">Limitations & Caveats</h2>
-        <ul class="list-disc list-inside text-sm text-ink-secondary leading-relaxed space-y-1.5">
-          <li>Results reflect the IBM public dataset; generalization to other organizations requires additional validation.</li>
-          <li>Temporal validation was limited; future performance may vary as workforce dynamics change.</li>
-          <li>Estimated business impact ($2.3M) is a model-based projection, not a verified client outcome.</li>
-          <li>Model predictions should be combined with fairness auditing before deployment in hiring or retention decisions.</li>
-          <li>SHAP values provide association, not causal inference; additional experimental design is recommended for policy evaluation.</li>
-        </ul>
-      </section>
-
       <!-- Links -->
-      <div class="flex gap-4">
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">View source on GitHub</a>
-        {project.demoUrl ? (
-          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">Live demo <span class="text-[10px] font-mono uppercase tracking-wide ml-1 opacity-70">placeholder</span></a>
-        ) : null}
+      <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-border">
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          View source on GitHub
+        </a>
+        <a href="/portfolio/#projects" class="btn-secondary text-sm">
+          Browse other case studies
+        </a>
       </div>
     </div>
   </main>

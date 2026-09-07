@@ -3,25 +3,65 @@ import Layout from '@/components/layout/Layout.astro';
 import { PROJECTS } from '@/data/projects';
 ---
 
-<Layout title="Projects | Yassine Hatouf" description="Selected projects demonstrating HR analytics, predictive modeling, and full-stack engineering." image="/portfolio/images/og-image.svg">
-  <header class="pt-32 pb-12 max-w-content mx-auto px-6 lg:px-10">
+<Layout
+  title="Case Studies & Engineering Projects | Yassine Hatouf"
+  description="Technical case studies spanning MLOps pipelines, full-stack Java/React systems, and predictive data science with verified benchmarks and reproducible engineering workflows."
+  image="/portfolio/images/og-image.svg"
+>
+  <header class="pt-32 pb-12 lg:pt-36 lg:pb-16 max-w-content mx-auto px-6 lg:px-10">
+    <a href="/portfolio/" class="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-accent-green mb-6 transition-colors font-medium">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      Back to overview
+    </a>
     <p class="label-eyebrow mb-3">Case Studies</p>
-    <h1 class="font-display text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">Selected work</h1>
-    <p class="text-lg text-ink-secondary max-w-2xl leading-relaxed">Predictive analytics, HR insights, and engineering foundations — with clear business context and documented limitations.</p>
+    <h1 class="font-display text-4xl lg:text-5xl font-bold text-ink tracking-tight mb-4">
+      Selected engineering systems & pipelines
+    </h1>
+    <p class="text-lg text-ink-secondary max-w-3xl leading-relaxed">
+      Detailed case studies covering MLOps pipelines, full-stack application architecture, predictive modeling, and data pipelines — documented with real code, verified benchmark metrics, and explicit limitations.
+    </p>
   </header>
 
   <main class="max-w-content mx-auto px-6 lg:px-10 pb-24">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {PROJECTS.map(project => (
-        <article class="card-surface flex flex-col">
-          <h2 class="font-display text-xl font-bold text-ink mb-2">{project.title}</h2>
-          <p class="text-sm text-ink-secondary leading-relaxed mb-4">{project.shortDescription}</p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            {project.stack.slice(0, 5).map(s => (
-              <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">{s}</span>
-            ))}
+        <article class="bg-surface border border-border rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:border-accent-green/30 transition-colors">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full bg-accent-green" aria-hidden="true"></span>
+              <span class="text-xs font-mono font-semibold uppercase tracking-wider text-ink-muted">
+                {project.type.toUpperCase()}
+              </span>
+            </div>
+            <h2 class="font-display text-2xl font-bold text-ink mb-3">{project.title}</h2>
+            <p class="text-sm text-ink-secondary leading-relaxed mb-6">{project.shortDescription}</p>
+
+            <div class="space-y-2 mb-6 pt-4 border-t border-border">
+              {project.keyMetrics.slice(0, 2).map(m => (
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-ink-muted">{m.label}</span>
+                  <span class="font-mono font-bold text-ink">{m.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              {project.stack.slice(0, 4).map(s => (
+                <span class="text-[11px] font-mono text-ink-muted bg-surface-subtle border border-border rounded px-2 py-0.5">{s}</span>
+              ))}
+            </div>
           </div>
-          <a href={`/portfolio/projects/${project.slug}`} class="text-sm font-medium text-accent-green hover:underline mt-auto">Read case study →</a>
+
+          <div class="pt-4 border-t border-border flex items-center justify-between">
+            <a href={`/portfolio/projects/${project.slug}`} class="text-sm font-semibold text-accent-green hover:underline">
+              Read case study →
+            </a>
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-ink-muted hover:text-ink">
+              GitHub ↗
+            </a>
+          </div>
         </article>
       ))}
     </div>
