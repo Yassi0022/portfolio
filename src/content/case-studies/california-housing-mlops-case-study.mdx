@@ -1,11 +1,11 @@
 ---
-title: "California Housing MLOps — Case Study"
+title: "California Housing — ML Pipeline Case Study"
 project: "california-housing-mlops"
 ---
 
 ## Problem & Context
 
-The California Housing dataset is a classic regression benchmark, but most tutorials stop at model training in a notebook. **Real ML engineering begins where notebooks end.** This project was built to demonstrate a complete, production-ready MLOps pipeline — from raw data ingestion through automated training, validation, versioning, and serving — using industry-standard tools and practices.
+The California Housing dataset is a classic regression benchmark, but most tutorials stop at model training in a notebook. **Real ML engineering begins where notebooks end.** This project demonstrates a complete ML pipeline — from raw data ingestion through automated training, validation, versioning, and serving — using industry-standard tools: MLflow, FastAPI, Docker, GitHub Actions, and Pytest.
 
 **Key challenges addressed:**
 - Reproducible, automated training pipelines (not manual notebook runs)
@@ -162,8 +162,8 @@ async def health():
 
 ### GitHub Actions CI/CD
 ```yaml
-# .github/workflows/mlops.yml
-name: MLOps Pipeline
+# .github/workflows/ml_pipeline.yml
+name: ML Pipeline CI
 on:
   push:
     branches: [main]

@@ -157,7 +157,7 @@ export function GenerativeHero({ className = '' }: GenerativeHeroProps) {
                   <div className="text-xl sm:text-2xl font-display font-bold text-accent-primary mb-0.5 group-hover:text-accent-secondary transition-colors">
                     Machine Learning
                   </div>
-                  <div className="text-text-muted font-mono text-xs">MLOps & Predictive Models</div>
+                  <div className="text-text-muted font-mono text-xs">ML Pipelines & Predictive Models</div>
                 </div>
                 <div className="w-px h-8 bg-border hidden sm:block" />
                 <div className="group">

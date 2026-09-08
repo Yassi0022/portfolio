@@ -48,9 +48,9 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     slug: 'california-housing-mlops',
-    title: 'California Housing MLOps',
-    shortDescription: 'End-to-end MLOps pipeline for housing price prediction with XGBoost and FastAPI. Reproducible ML engineering with automated training, validation, and serving.',
-    longDescription: `A complete MLOps pipeline demonstrating production-grade machine learning engineering. This project implements the full lifecycle from data ingestion through model training, validation, versioning, and serving via a REST API. Built to showcase modern MLOps practices including experiment tracking, model registry, automated testing, and CI/CD for ML systems.`,
+    title: 'California Housing ML Pipeline',
+    shortDescription: 'End-to-end ML pipeline for housing price prediction: XGBoost training, MLflow experiment tracking, FastAPI serving, Docker containerisation, and GitHub Actions CI. R² = 0.87.',
+    longDescription: `A complete ML engineering pipeline demonstrating reproducible machine learning from data ingestion through model training, validation, versioning, and REST API serving. Built with MLflow for experiment tracking and model registry, FastAPI for serving, Docker for reproducible environments, and GitHub Actions for CI/CD automation.`,
     type: 'mlops',
     stack: ['Python', 'XGBoost', 'FastAPI', 'MLflow', 'Docker', 'GitHub Actions', 'Pytest', 'Pandas', 'Scikit-learn'],
     githubUrl: 'https://github.com/Yassi0022/California-Housing-Mlops',

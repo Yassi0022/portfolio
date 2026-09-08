@@ -8,7 +8,7 @@ import ContactSection from '@/components/contact/ContactSection.astro';
 
 <Layout
   title="Yassine Hatouf — Software Developer, Backend & Data Science Portfolio"
-  description="Computer engineering student and freelance software developer / data analyst building practical data products, backend systems, APIs, machine learning pipelines, and reliable software with Python, Java, and SQL."
+  description="Computer engineering student building backend systems, data pipelines, ML models, and APIs. Practical software with Python, Java, and SQL."
   image="/portfolio/images/og-image.svg"
 >
   <Hero />
@@ -24,7 +24,7 @@ import ContactSection from '@/components/contact/ContactSection.astro';
           </h2>
           <div class="space-y-4 text-ink-secondary leading-relaxed">
             <p>
-              I am a computer engineering student, freelance software developer, and data analyst focused on backend engineering, applied machine learning, data pipelines, and practical software solutions. I develop reproducible analyses, robust APIs, and structured data architectures designed to make complex systems useful and reliable.
+              I am a computer engineering student and data developer focused on backend engineering, applied machine learning, data pipelines, and practical software solutions. I develop reproducible analyses, robust APIs, and structured data architectures designed to make complex systems useful and reliable.
             </p>
             <p>
               My academic background in work and organizational psychology provides a complementary domain perspective for selected projects involving organizational dynamics, HR analytics, and decision support. It strengthens my ability to formulate research questions, interpret high-dimensional workforce data, and communicate technical findings clearly — while keeping the primary focus on engineering rigor.
@@ -63,7 +63,7 @@ import ContactSection from '@/components/contact/ContactSection.astro';
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
-              <span><strong>Machine Learning & MLOps:</strong> XGBoost, Scikit-learn, Optuna, MLflow, SHAP explainability.</span>
+              <span><strong>Machine Learning &amp; Data Science:</strong> XGBoost, Scikit-learn, Optuna, MLflow experiment tracking, SHAP interpretability.</span>
             </li>
             <li class="flex items-start gap-3">
               <span class="w-1.5 h-1.5 rounded-full bg-accent-green mt-2 shrink-0" aria-hidden="true"></span>
@@ -77,7 +77,7 @@ import ContactSection from '@/components/contact/ContactSection.astro';
 
           <div class="pt-4 border-t border-border">
             <p class="text-xs text-ink-muted leading-relaxed">
-              Target roles: Software Developer, Backend Developer, Data Scientist, Data Analyst, Junior ML / MLOps Engineer.
+              Target roles: Software Developer, Backend Developer, Data Scientist, Data Analyst, Junior ML Engineer.
             </p>
           </div>
         </aside>
@@ -244,43 +244,49 @@ import ContactSection from '@/components/contact/ContactSection.astro';
         </p>
       </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
-          <img
-            src="/portfolio/images/projects/charts/attrition_by_overtime.png"
-            alt="Real chart: attrition rate by overtime status from IBM HR Analytics dataset"
-            class="w-full h-auto bg-white p-4"
-            loading="lazy"
-          />
-          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong class="text-ink block mb-1">Figure 1 — Attrition rate by overtime status</strong>
-            Produced by <code>2_visuals.py</code> on the IBM HR Analytics dataset (<code>WA_Fn-UseC_-HR-Employee-Attrition.csv</code>, 1,470 records). Demonstrates that employees logging regular overtime exhibit more than triple the baseline departure rate.
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <figure class="bg-surface border border-border rounded-2xl shadow-sm">
+          <div class="rounded-t-2xl overflow-hidden">
+            <img
+              src="/portfolio/images/projects/charts/attrition_by_overtime.png"
+              alt="Real chart: attrition rate by overtime status from IBM HR Analytics dataset"
+              class="w-full h-48 object-contain bg-white p-3"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="px-5 py-3 text-xs text-ink-muted bg-surface-subtle border-t border-border rounded-b-2xl">
+            <strong class="text-ink block mb-0.5">Attrition by overtime</strong>
+            From IBM HR dataset, 1,470 records. Employees logging overtime leave at 3× the baseline rate.
           </figcaption>
         </figure>
 
-        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm">
-          <img
-            src="/portfolio/images/projects/charts/feature_importance.png"
-            alt="Real chart: feature importance from Random Forest model"
-            class="w-full h-auto bg-white p-4"
-            loading="lazy"
-          />
-          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong class="text-ink block mb-1">Figure 2 — Feature importance (Random Forest)</strong>
-            Extracted from <code>models/random_forest.joblib</code> via <code>4b_feature_importance.py</code>. Confirms MonthlyIncome, OverTime, Age, and TotalWorkingYears as the primary predictive split drivers.
+        <figure class="bg-surface border border-border rounded-2xl shadow-sm">
+          <div class="rounded-t-2xl overflow-hidden">
+            <img
+              src="/portfolio/images/projects/charts/feature_importance.png"
+              alt="Real chart: feature importance from Random Forest model"
+              class="w-full h-48 object-contain bg-white p-3"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="px-5 py-3 text-xs text-ink-muted bg-surface-subtle border-t border-border rounded-b-2xl">
+            <strong class="text-ink block mb-0.5">Feature importance (Random Forest)</strong>
+            From <code>models/random_forest.joblib</code> via <code>4b_feature_importance.py</code>. MonthlyIncome, OverTime, and Age are top split drivers.
           </figcaption>
         </figure>
 
-        <figure class="bg-surface border border-border rounded-2xl overflow-hidden shadow-sm md:col-span-2">
-          <img
-            src="/portfolio/images/projects/charts/roc_curve_random_forest.png"
-            alt="Real chart: ROC curve from Random Forest evaluation"
-            class="w-full h-auto max-h-[420px] object-contain mx-auto bg-white p-4"
-            loading="lazy"
-          />
-          <figcaption class="px-6 py-4 text-xs text-ink-muted bg-surface-subtle border-t border-border">
-            <strong class="text-ink block mb-1">Figure 3 — ROC evaluation curve (Random Forest)</strong>
-            Produced by <code>4_model.py</code> with verified benchmark test AUC = 0.784 (recorded in <code>models/random_forest_metrics.json</code>). Represents empirical test split evaluation on the public IBM benchmark.
+        <figure class="bg-surface border border-border rounded-2xl shadow-sm">
+          <div class="rounded-t-2xl overflow-hidden">
+            <img
+              src="/portfolio/images/projects/charts/roc_curve_random_forest.png"
+              alt="Real chart: ROC curve from Random Forest evaluation, test AUC 0.784"
+              class="w-full h-48 object-contain bg-white p-3"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="px-5 py-3 text-xs text-ink-muted bg-surface-subtle border-t border-border rounded-b-2xl">
+            <strong class="text-ink block mb-0.5">ROC curve (Random Forest, AUC 0.784)</strong>
+            From <code>4_model.py</code> on the IBM HR test split. Verified benchmark; not a production claim.
           </figcaption>
         </figure>
       </div>

@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Yassine Hatouf',
   title: 'Software Developer · Backend & Data Science',
-  description: 'Computer engineering student and freelance software developer / data analyst building practical data products, backend systems, APIs, machine learning pipelines, and reliable software with Python, Java, and SQL.',
+  description: 'Computer engineering student building backend systems, ML pipelines, data products, and APIs in Python, Java, and SQL.',
   url: 'https://yassi0022.github.io/portfolio',
   github: 'https://github.com/Yassi0022',
   linkedin: 'https://www.linkedin.com/in/yassine-hatouf',

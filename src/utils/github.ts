@@ -203,7 +203,7 @@ export const FALLBACK_REPO_DATA: Record<string, GitHubRepo> = {
     ],
     updatedAt: '2024-12-01T09:15:00Z',
     url: 'https://github.com/Yassi0022/hobbybuddy',
-    homepageUrl: 'https://hobbybuddy.example.com',
+    homepageUrl: null,
     topics: ['spring-boot', 'react', 'mysql', 'redis', 'websocket', 'matching-algorithm'],
   },
 };
